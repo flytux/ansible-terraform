@@ -1,0 +1,16 @@
+---
+- name: Create Multipass VMs for a K3S cluster
+  hosts: localhost
+  tasks:
+  - name: Read K3S cluster node VM configuration from file
+    include_vars:
+      file: k3s-nodes.yml
+      name: k3snodes
+  - name: Create keypair and cloud-init
+    include_tasks: create-keys-and-cloud-init.yml
+  - name: Create the K3S cluster VMs
+    include_tasks: delete-and-create-new-vm-tasks.yml
+    vars:
+      vmname: "{{ item.key }}"
+      vmcreationparams: "{{ item.value }}"
+    loop: "{{ k3snodes | dict2items }}"
