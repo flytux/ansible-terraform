@@ -1,12 +1,22 @@
-module "multipass_vm" {
-  source = "./multipass_module"
+resource "multipass_instance" "multipass_vm" {
+    count          = var.instance_count
+    cloudinit_file = "${path.module}/user_data.cfg"
+    name   = "${var.name_prefix}-${var.name}-${count.index + 1}"
+    cpus           = var.cpus
+    memory         = var.memory
+    disk           = var.disks
+    image          = var.image_name
+} 
 
-  instance_count = var.instance_count
-  user_data      = "${path.module}/user_data.cfg"
-  name_prefix    = "vmtf"
-  name           = var.name
-  image_name     = var.image_name
-  cpus           = var.cpus
-  memory         = var.memory
-  disks          = var.disks
+terraform {
+  required_providers {
+    multipass = {
+      source = "larstobi/multipass"
+      version = "1.4.2"
+    }
+  }
+}
+
+provider "multipass" {
+  # Configuration options
 }

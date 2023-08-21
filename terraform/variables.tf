@@ -7,7 +7,7 @@ variable "user_data" {
 variable "name" {
   description = "Name of the VM your creating"
   type        = string
-  default     = "dev"
+  default     = "kw-demo"
 }
 
 variable "image_name" {
@@ -19,7 +19,7 @@ variable "image_name" {
 variable "cpus" {
   description = "virtual cpu count"
   type        = number
-  default     = 4
+  default     = 2
 }
 
 variable "memory" {
@@ -31,7 +31,7 @@ variable "memory" {
 variable "disks" {
   description = "Thin provisioned disk size"
   type        = string
-  default     = "20G"
+  default     = "10G"
 }
 
 variable "instance_count" {
@@ -43,5 +43,5 @@ variable "instance_count" {
 variable "name_prefix" {
   description = "Instance name prefix"
   type        = string
-  default     = "instance"
+  default     = "vm"
 }
