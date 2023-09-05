@@ -1,0 +1,18 @@
+---
+
+# post cluster steps
+- hosts: master
+  become: yes
+  roles:
+    - role: additional-netplan-ip
+    - role: k3s-fix-master-node-ip
+    - role: k3s-get-kubeconfig-local
+    - role: tiny-tools-all-nodes
+
+  tasks:
+
+    - name: enough permissions that 'ubuntu' user can use kubectl without permission error
+      file:
+        path: /etc/rancher/k3s/config.yaml
+        mode: 0555
+        state: file

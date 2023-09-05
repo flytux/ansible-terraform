@@ -1,0 +1,2 @@
+kw-demo-01: "--mem 3G --disk 5G 20.04"
+kw-demo-02: "--mem 4G --disk 5G 20.04"
