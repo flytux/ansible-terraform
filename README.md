@@ -1,4 +1,12 @@
-# Terraform K3S with libvirt provisioner
+# Terraform Kubernetes Provisioners
 
-- Multimaster node config need to be added
-- cluster-init / server url selected on 1st and later master nodes
+- k3s with libvirt provisioner
+  - Multi master / worker node provisioning
+  - Based on dmacvicar/libvirt
+  - VM configure from https://fabianlee.org/
+    
+- kubeadm with libvvirt provisioner
+  
+- kubesphere with libvirt provisioner
+
+---
