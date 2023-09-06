@@ -1,7 +1,8 @@
 # Local reference for VMs
 locals {
   masters = {
-           "k3s-master-1" = { role = "master", os_code_name = "focal", octetIP = "213", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "k3s-master-1" = { role = "master-init", os_code_name = "focal", octetIP = "213", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "k3s-master-2" = { role = "master-member", os_code_name = "focal", octetIP = "214", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
   }
 }
 
@@ -14,14 +15,20 @@ resource "random_string" "token" {
   override_special = ":"
 }
 
-
-data "template_file" "master" {
-  template = file("artifacts/templates/master.sh")
+data "template_file" "master-init" {
+  template = file("artifacts/templates/master-init.sh")
   vars = {
-    token                  = random_string.token.result
+    token     = random_string.token.result
   }
 }
 
+data "template_file" "master-member" {
+  template = file("artifacts/templates/master-member.sh")
+  vars = {
+    token     = random_string.token.result
+    master_ip = var.master_ip
+  }
+}
 
 # OS images for libvirt VMs
 resource "libvirt_volume" "os_image_masters" {
@@ -106,7 +113,12 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 
   provisioner "local-exec" {
     command = <<-EOT
-              echo "${data.template_file.master.rendered}" > artifacts/k3s/master.sh
+              if [ "${each.value.role}" = "master-init" ]
+                then
+                     echo "${data.template_file.master-init.rendered}" > artifacts/k3s/master-init.sh
+                else
+                     echo "${data.template_file.master-member.rendered}" > artifacts/k3s/master-member.sh
+              fi 
               EOT
   }
 
@@ -124,9 +136,18 @@ resource "libvirt_domain" "k8s_nodes_masters" {
   }
 
   provisioner "remote-exec" {
-    inline = [
-      "chmod +x ./k3s/master.sh",
-      "sudo ./k3s/master.sh"
+    inline = [<<EOF
+      HOSTNAME=$(hostname) 
+      if [ "$HOSTNAME" = "k3s-master-1" ]
+        then
+           chmod +x ./k3s/master-init.sh
+           sudo ./k3s/master-init.sh
+        else
+           sleep 10 
+           chmod +x ./k3s/master-member.sh
+           sudo ./k3s/master-member.sh
+      fi     
+      EOF
     ]
   }
  
