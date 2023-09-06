@@ -1,4 +1,4 @@
-# ansible-terraform
+# Terraform K3S with libvirt provisioner
 
-- Create multipass vms with ansible and terraform
-- Use multipass module and cloudinit script
+- Multimaster node config need to be added
+- cluster-init / server url selected on 1st and later master nodes
