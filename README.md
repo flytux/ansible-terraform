@@ -5,7 +5,8 @@
   - Based on dmacvicar/libvirt
   - VM configure from https://fabianlee.org/
     
-- kubeadm with libvvirt provisioner
+- kubeadm with libvirt provisioner
+  - create vm with ssh module :-)
   
 - kubesphere with libvirt provisioner
 
