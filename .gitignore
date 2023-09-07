@@ -45,4 +45,6 @@ terraform.rc
 *.tar.gz
 *.gz
 k3s
-
+*.hcl
+*.key
+*.pub
