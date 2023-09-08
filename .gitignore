@@ -48,3 +48,4 @@ k3s
 *.hcl
 *.key
 *.pub
+*.amd64
