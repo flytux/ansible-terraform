@@ -49,3 +49,7 @@ k3s
 *.key
 *.pub
 *.amd64
+kubeadm
+kubectl
+kubelet
+containerd
