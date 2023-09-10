@@ -86,7 +86,9 @@ resource "libvirt_domain" "k8s_nodes_masters" {
       HOSTNAME=$(hostname) 
       if [ "$HOSTNAME" = "kubeadm-master-1" ]
         then
+           chmod +x ./kubeadm/setup-kubeadm.sh
            chmod +x ./kubeadm/master-init.sh
+           sudo ./kubeadm/setup-kubeadm.sh
            sudo ./kubeadm/master-init.sh
         else
            sleep 10 
