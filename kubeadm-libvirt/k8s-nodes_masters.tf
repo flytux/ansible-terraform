@@ -70,7 +70,7 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 
   connection {
     host        = "${var.prefixIP}.${each.value.octetIP}"
-    user        = "ubuntu"
+    user        = "${var.user}"
     type        = "ssh"
     private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
     timeout     = "1m"
@@ -78,7 +78,12 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 
   provisioner "file" {
     source      = "artifacts/kubeadm"
-    destination = "/home/ubuntu/kubeadm"
+    destination = "/root/kubeadm"
+  }
+
+  provisioner "file" {
+    source      = ".ssh-default/id_rsa.key"
+    destination = "/root/.ssh/id_rsa.key"
   }
 
   provisioner "remote-exec" {
@@ -91,12 +96,41 @@ resource "libvirt_domain" "k8s_nodes_masters" {
            sudo ./kubeadm/setup-kubeadm.sh
            sudo ./kubeadm/master-init.sh
         else
-           sleep 10 
+           chmod +x ./kubeadm/setup-kubeadm.sh
            chmod +x ./kubeadm/master-member.sh
+           sudo ./kubeadm/setup-kubeadm.sh
            sudo ./kubeadm/master-member.sh
       fi     
       EOF
     ]
   }
- 
 }
+
+resource "null_resource" "add-master" {
+  depends_on = [libvirt_domain.k8s_nodes_masters]
+
+  for_each = local.master-members
+
+  connection {
+    type        = "ssh"
+    user        = "${var.user}"
+    private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
+    host        = "${var.prefixIP}.${each.value.octetIP}"
+  }
+
+  provisioner "remote-exec" {
+  inline = [<<EOF
+           chmod 400 .ssh/id_rsa.key
+           JOIN_CMD=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- kubeadm token create --print-join-command)
+           JOIN_OPTS="--control-plane --certificate-key"
+           JOIN_CERTS=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- kubeadm init phase upload-certs --upload-certs | grep -vw -e certificate -e Namespace)
+           echo "$JOIN_CMD $JOIN_OPTS $JOIN_CERTS"
+           $JOIN_CMD $JOIN_OPTS $JOIN_CERTS
+           sleep 5
+    EOF
+    ]
+  }
+
+}
+
+ 

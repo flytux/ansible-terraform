@@ -1,9 +1,16 @@
 locals {
   masters = {
            "kubeadm-master-1" = { role = "master-init", os_code_name = "focal", octetIP = "101", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "kubeadm-master-2" = { role = "master-member", os_code_name = "focal", octetIP = "102", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "kubeadm-master-3" = { role = "master-member", os_code_name = "focal", octetIP = "103", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+  }
+  master-members = {
+           "kubeadm-master-2" = { role = "master-member", os_code_name = "focal", octetIP = "102", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "kubeadm-master-3" = { role = "master-member", os_code_name = "focal", octetIP = "103", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
   }
   workers = {
            "kubeadm-worker-1" = { role = "worker", os_code_name = "focal", octetIP = "111", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
+           "kubeadm-worker-2" = { role = "worker", os_code_name = "focal", octetIP = "112", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
   }
 }
 
@@ -32,6 +39,7 @@ resource "tls_private_key" "generic-ssh-key" {
 data "template_file" "master-init" {
   template = file("artifacts/templates/master-init.sh")
   vars = {
+    master_ip = var.master_ip
   }
 }
 

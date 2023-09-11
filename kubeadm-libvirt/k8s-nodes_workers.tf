@@ -59,7 +59,7 @@ resource "libvirt_domain" "k8s_nodes_workers" {
 
   connection {
     host        = "${var.prefixIP}.${each.value.octetIP}"
-    user        = "ubuntu"
+    user        = "${var.user}"
     type        = "ssh"
     private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
     timeout     = "1m"
@@ -73,13 +73,24 @@ resource "libvirt_domain" "k8s_nodes_workers" {
 
   provisioner "file" {
     source      = "artifacts/kubeadm"
-    destination = "/home/ubuntu/kubeadm"
+    destination = "/root/kubeadm"
+  }
+
+  provisioner "file" {
+    source      = ".ssh-default/id_rsa.key"
+    destination = "/root/.ssh/id_rsa.key"
   }
 
   provisioner "remote-exec" {
-    inline = [
-      "chmod +x ./kubeadm/worker.sh",
-      "sudo ./kubeadm/worker.sh"
+    inline = [<<EOF
+      chmod +x ./kubeadm/setup-kubeadm.sh
+      sudo ./kubeadm/setup-kubeadm.sh
+      chmod +x ./kubeadm/worker.sh
+      sudo ./kubeadm/worker.sh
+      chmod 400 .ssh/id_rsa.key
+      JOIN_CMD=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- kubeadm token create --print-join-command)
+      $JOIN_CMD
+      EOF
     ]
   }
  

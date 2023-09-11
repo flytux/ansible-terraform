@@ -3,9 +3,7 @@
 # 01 init cluster
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 
-sudo kubeadm init \
-  --cri-socket /run/containerd/containerd.sock \
-  --pod-network-cidr=192.168.0.0/16
+sudo kubeadm init --cri-socket /run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/16 --upload-certs --control-plane-endpoint=${master_ip}:6443
 
 # 02 copy kubeconfig
 mkdir -p $HOME/.kube
