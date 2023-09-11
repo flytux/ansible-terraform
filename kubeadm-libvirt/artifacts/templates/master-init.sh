@@ -3,8 +3,9 @@
 # 01 init cluster
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 
-sudo kubeadm init --cri-socket /run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/16 --upload-certs --control-plane-endpoint=${master_ip}:6443
 
+sudo kubeadm init --cri-socket /run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/16 --upload-certs --control-plane-endpoint=${master_ip}:6443 | \
+sed -e '/kubeadm join/,/--certificate-key/!d' | head -n 3 > join_cmd
 # 02 copy kubeconfig
 mkdir -p $HOME/.kube
 sudo cp -ru /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -16,11 +17,3 @@ sleep 5 #wait for the deployment to start the required pods
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/custom-resources.yaml
 sleep 5 #wait for the deployment to start the required pods
 
-mkdir -p $HOME/.kube
-sudo cp -ru /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-# 04 print join command
-kubeadm token create --print-join-command 
-echo "--control-plane --certificate-key"
-kubeadm init phase upload-certs --upload-certs | grep -vw -e certificate -e Namespace

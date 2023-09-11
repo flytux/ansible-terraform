@@ -62,8 +62,6 @@ resource "libvirt_domain" "k8s_nodes_masters" {
               if [ "${each.value.role}" = "master-init" ]
                 then
                      echo "${data.template_file.master-init.rendered}" > artifacts/kubeadm/master-init.sh
-                else
-                     echo "${data.template_file.master-member.rendered}" > artifacts/kubeadm/master-member.sh
               fi 
               EOT
   }
@@ -97,9 +95,7 @@ resource "libvirt_domain" "k8s_nodes_masters" {
            sudo ./kubeadm/master-init.sh
         else
            chmod +x ./kubeadm/setup-kubeadm.sh
-           chmod +x ./kubeadm/master-member.sh
            sudo ./kubeadm/setup-kubeadm.sh
-           sudo ./kubeadm/master-member.sh
       fi     
       EOF
     ]
@@ -121,16 +117,11 @@ resource "null_resource" "add-master" {
   provisioner "remote-exec" {
   inline = [<<EOF
            chmod 400 .ssh/id_rsa.key
-           JOIN_CMD=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- kubeadm token create --print-join-command)
-           JOIN_OPTS="--control-plane --certificate-key"
-           JOIN_CERTS=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- kubeadm init phase upload-certs --upload-certs | grep -vw -e certificate -e Namespace)
-           echo "$JOIN_CMD $JOIN_OPTS $JOIN_CERTS"
-           $JOIN_CMD $JOIN_OPTS $JOIN_CERTS
-           sleep 5
+           JOIN=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- cat join_cmd | tr '\\' ' ')
+           $JOIN
     EOF
     ]
   }
 
 }
 
- 
