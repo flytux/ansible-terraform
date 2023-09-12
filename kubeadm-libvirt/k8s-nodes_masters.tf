@@ -87,6 +87,7 @@ resource "libvirt_domain" "k8s_nodes_masters" {
   provisioner "remote-exec" {
     inline = [<<EOF
       HOSTNAME=$(hostname) 
+      echo $HOSTNAME ">>> Running Kubeadm Init"
       if [ "$HOSTNAME" = "kubeadm-master-1" ]
         then
            chmod +x ./kubeadm/setup-kubeadm.sh
@@ -105,7 +106,10 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 resource "null_resource" "add-master" {
   depends_on = [libvirt_domain.k8s_nodes_masters]
 
-  for_each = local.master-members
+  #for_each = local.master-members
+
+  for_each =  {for key, val in local.masters:
+               key => val if val.role == "master-member"}
 
   connection {
     type        = "ssh"

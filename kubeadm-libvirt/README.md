@@ -51,3 +51,8 @@ For Minor Upgardes -> Review the requiremets and related artifacts to upgrade
 - sudo systemctl daemon-reload
 - systemctl restart kubelet
 - kubectl uncordon $NODE_NAME
+
+
+
+# Update 23/09/12
+- install package via dpkg errors with package db lock => changed to cloud-init package add
