@@ -18,7 +18,7 @@
 
 For Minor Upgardes -> Review the requiremets and related artifacts to upgrade
 - kubeadm upgrade plan v1.26.7 > v1.26.8
-- wget wget https://dl.k8s.io/v1.26.8/kubernetes-server-linux-amd64.tar.gz
+- wget https://dl.k8s.io/v1.26.8/kubernetes-server-linux-amd64.tar.gz
 
 ### 1st control plane upgrade
 - mv /usr/local/bin/kubeadm /usr/local/bin/kubeadm-v1.26.7
