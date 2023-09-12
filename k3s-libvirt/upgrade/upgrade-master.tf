@@ -19,14 +19,14 @@ resource "null_resource" "upgrade-master" {
 
   connection {
     type        = "ssh"
-    user        = "ubuntu"
+    user        = "root"
     private_key = file("${path.module}/../deploy/.ssh-default/id_rsa.key")
     host        = "${var.prefixIP}.${each.value.octetIP}"
   }
 
   provisioner "file" {
   source      = "k3s/upgrade-master.sh"
-  destination = "/home/ubuntu/k3s/upgrade-master.sh"
+  destination = "/root/k3s/upgrade-master.sh"
   }
 
   provisioner "remote-exec" {

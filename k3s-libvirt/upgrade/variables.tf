@@ -12,4 +12,4 @@ variable "diskPool" { default = "default" }
 
 variable "qemu_connect" { default = "qemu:///system" }
 
-variable "new_version" { default = "1.26.7" }
+variable "new_version" { default = "1.26.8" }

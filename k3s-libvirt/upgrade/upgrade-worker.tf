@@ -19,14 +19,14 @@ resource "null_resource" "upgrade-worker" {
 
   connection {
     type        = "ssh"
-    user        = "ubuntu"
+    user        = "root"
     private_key = file("${path.module}/../deploy/.ssh-default/id_rsa.key")
     host        = "${var.prefixIP}.${each.value.octetIP}"
   }
 
   provisioner "file" {
   source      = "k3s/upgrade-worker.sh"
-  destination = "/home/ubuntu/k3s/upgrade-worker.sh"
+  destination = "/root/k3s/upgrade-worker.sh"
   }
 
   provisioner "remote-exec" {

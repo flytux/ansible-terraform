@@ -97,7 +97,7 @@ resource "libvirt_cloudinit_disk" "cloudinit_disk_masters" {
 # Configure cloud-init 
 data "template_file" "cloud_init_masters" {
   for_each = local.masters
-  template = file("${path.module}/cfg/cloud_init.cfg")
+  template = file("${path.module}/artifacts/config/cloud_init.cfg")
   vars = {
     hostname = each.key
     fqdn     = "${each.key}.${var.dns_domain}"
@@ -109,7 +109,7 @@ data "template_file" "cloud_init_masters" {
 # Configure network
 data "template_file" "network_config_masters" {
   for_each = local.masters
-  template = file("${path.module}/cfg/network_config_${var.ip_type}.cfg")
+  template = file("${path.module}/artifacts/config/network_config_${var.ip_type}.cfg")
   vars = {
     domain   = var.dns_domain
     prefixIP = var.prefixIP
@@ -150,7 +150,7 @@ resource "libvirt_cloudinit_disk" "cloudinit_disk_workers" {
 # Configure cloud-init 
 data "template_file" "cloud_init_workers" {
   for_each = local.workers
-  template = file("${path.module}/cfg/cloud_init.cfg")
+  template = file("${path.module}/artifacts/config/cloud_init.cfg")
   vars = {
     hostname = each.key
     fqdn     = "${each.key}.${var.dns_domain}"
@@ -162,7 +162,7 @@ data "template_file" "cloud_init_workers" {
 # Configure network
 data "template_file" "network_config_workers" {
   for_each = local.workers
-  template = file("${path.module}/cfg/network_config_${var.ip_type}.cfg")
+  template = file("${path.module}/artifacts/config/network_config_${var.ip_type}.cfg")
   vars = {
     domain   = var.dns_domain
     prefixIP = var.prefixIP

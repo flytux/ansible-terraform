@@ -40,7 +40,7 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 
   connection {
     host        = "${var.prefixIP}.${each.value.octetIP}"
-    user        = "ubuntu"
+    user        = "root"
     type        = "ssh"
     private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
     timeout     = "1m"
@@ -48,7 +48,7 @@ resource "libvirt_domain" "k8s_nodes_masters" {
 
   provisioner "file" {
     source      = "artifacts/k3s"
-    destination = "/home/ubuntu/k3s"
+    destination = "/root/k3s"
   }
 
   provisioner "remote-exec" {

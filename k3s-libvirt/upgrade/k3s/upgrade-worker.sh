@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "${0%/*}"
-NEW_VERSION=1.26.7
+NEW_VERSION=1.26.8
 OLD_VERSION=$(/usr/local/bin/k3s --version | grep -oP 'v[1-9][^\s]+')
 
 echo "=== stop k3s-agent.service ==="
