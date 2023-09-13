@@ -1,0 +1,5 @@
+[Unit]
+Description=Backup ETCD
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/kube-scripts/etcd-backup.sh
