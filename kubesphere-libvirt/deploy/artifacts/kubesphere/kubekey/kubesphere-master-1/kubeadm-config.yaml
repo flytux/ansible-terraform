@@ -5,6 +5,7 @@ etcd:
   external:
     endpoints:
     - https://192.168.122.151:2379
+    - https://192.168.122.152:2379
     caFile: /etc/ssl/etcd/ssl/ca.pem
     certFile: /etc/ssl/etcd/ssl/node-kubesphere-master-1.pem
     keyFile: /etc/ssl/etcd/ssl/node-kubesphere-master-1-key.pem
@@ -24,7 +25,7 @@ networking:
 apiServer:
   extraArgs:
     bind-address: 0.0.0.0
-    feature-gates: RotateKubeletServerCertificate=true,TTLAfterFinished=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
+    feature-gates: CSIStorageCapacity=true,RotateKubeletServerCertificate=true,TTLAfterFinished=true,ExpandCSIVolumes=true
   certSANs:
     - "kubernetes"
     - "kubernetes.default"
@@ -36,6 +37,9 @@ apiServer:
     - "192.168.122.151"
     - "kubesphere-master-1"
     - "kubesphere-master-1.cluster.local"
+    - "kubesphere-master-2"
+    - "kubesphere-master-2.cluster.local"
+    - "192.168.122.152"
     - "kubesphere-worker-1"
     - "kubesphere-worker-1.cluster.local"
     - "192.168.122.181"
@@ -54,7 +58,7 @@ controllerManager:
 scheduler:
   extraArgs:
     bind-address: 0.0.0.0
-    feature-gates: CSIStorageCapacity=true,RotateKubeletServerCertificate=true,TTLAfterFinished=true,ExpandCSIVolumes=true
+    feature-gates: RotateKubeletServerCertificate=true,TTLAfterFinished=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
 
 ---
 apiVersion: kubeadm.k8s.io/v1beta2

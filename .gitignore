@@ -52,3 +52,4 @@ kubeadm
 kubectl
 kubelet
 containerd
+*.pem

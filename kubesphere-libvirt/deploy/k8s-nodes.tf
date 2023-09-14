@@ -1,7 +1,7 @@
 # Create the machine
 resource "libvirt_domain" "k8s_nodes" {
   depends_on = [libvirt_volume.os_images]
-  for_each = local.nodes
+  for_each = var.kubesphere_nodes
   # domain name in libvirt
   name   = "${each.key}-${var.prefixIP}.${each.value.octetIP}"
   memory = each.value.memoryMB
@@ -36,7 +36,7 @@ resource "libvirt_domain" "k8s_nodes" {
   }
 
   provisioner "file" {
-    source      = "artifacts/containerd"
+    source      = "artifacts/kubesphere/kubekey/containerd"
     destination = "/root/containerd"
   }
 

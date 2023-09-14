@@ -1,0 +1,13 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: JoinConfiguration
+discovery:
+  bootstrapToken:
+    apiServerEndpoint: lb.kubesphere.local:6443
+    token: "reybf9.tjz6nf3w6h77j8uc"
+    unsafeSkipCAVerification: true
+  tlsBootstrapToken: "reybf9.tjz6nf3w6h77j8uc"
+nodeRegistration:
+  criSocket: unix:///run/containerd/containerd.sock
+  kubeletExtraArgs:
+    cgroup-driver: cgroupfs
