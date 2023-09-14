@@ -3,5 +3,5 @@ mkdir -p /var/lib/rancher/k3s/agent/images/
 cp ./k3s/k3s-airgap-images-amd64.tar.gz /var/lib/rancher/k3s/agent/images/k3s-airgap-images-amd64.tar.gz
 cp ./k3s/k3s /usr/local/bin/k3s && chmod +x /usr/local/bin/k3s
 chmod +x ./k3s/install.sh
-INSTALL_K3S_SKIP_DOWNLOAD=true ./k3s/install.sh --token 6QpD5lHo44Lj5AOsMp:o4pxOStWCPaxcCy:d58bXe:RhNC7OKsMVkcByT79FAdI3dZD2FKJu5br:yOfyL7W9SVe9RzoE:hCcvUSPkisXMdl3 --write-kubeconfig-mode 644 --server https://192.168.122.213:6443
+INSTALL_K3S_SKIP_DOWNLOAD=true ./k3s/install.sh --token QekFqApwpi6:cqTgHVFbHhPGuIYOujFOWvpXZFVQugfbT6URzu2YIfxQCpFRZNb0KKcl7KQDNuqIMS3cVbs4c0QLpUhgeTizrEwc2owECqZ2 --write-kubeconfig-mode 644 --server https://192.168.100.101:6443
 
