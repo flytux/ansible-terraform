@@ -1,14 +1,7 @@
-locals {
-  masters = {
-           "kubeadm-master-1" = { role = "master-init", os_code_name = "focal", octetIP = "101", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
-           "kubeadm-master-2" = { role = "master-member", os_code_name = "focal", octetIP = "102", vcpu = 2, memoryMB = 1024 * 8, incGB = 30 }
-  }
-}
+resource "terraform_data" "upgrade_master" {
 
-resource "null_resource" "upgrade_master_init" {
-
-  for_each =  {for key, val in local.masters:
-               key => val if val.role == "master-init"}
+  for_each =  {for key, val in var.kubeadm_nodes:
+               key => val if val.role != "worker"}
 
   provisioner "local-exec" {
     command = <<EOF
@@ -41,11 +34,19 @@ resource "null_resource" "upgrade_master_init" {
 
 } 
 
-resource "null_resource" "upgrade_master_member" {
-  depends_on = [null_resource.upgrade_master_init]
+resource "terraform_data" "upgrade-worker" {
+  depends_on = [terraform_data.upgrade_master]
 
-  for_each =  {for key, val in local.masters:
-               key => val if val.role == "master-member"}
+  for_each =  {for key, val in var.kubeadm_nodes:
+               key => val if val.role == "worker"}
+
+  provisioner "local-exec" {
+    command = <<EOF
+      echo "Create upgrade-worker.sh"
+      sed -i "s/NEW_VERSION=.*/NEW_VERSION=${var.new_version}/" artifacts/kubeadm/upgrade-worker.sh
+      cat artifacts/kubeadm/upgrade-worker.sh | grep NEW_VERSION
+    EOF
+  }
 
   connection {
     type        = "ssh"
@@ -55,14 +56,14 @@ resource "null_resource" "upgrade_master_member" {
   }
 
   provisioner "file" {
-  source      = "artifacts/kubeadm/upgrade-master.sh"
-  destination = "/root/kubeadm/upgrade-master.sh"
+  source      = "artifacts/kubeadm/upgrade-worker.sh"
+  destination = "/root/kubeadm/upgrade-worker.sh"
   }
 
   provisioner "remote-exec" {
   inline = [<<EOF
-      chmod +x ./kubeadm/upgrade-master.sh
-      sudo ./kubeadm/upgrade-master.sh
+      chmod +x ./kubeadm/upgrade-worker.sh
+      sudo ./kubeadm/upgrade-worker.sh
     EOF
     ]
   }

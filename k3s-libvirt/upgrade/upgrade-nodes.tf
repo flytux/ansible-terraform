@@ -1,4 +1,4 @@
-resource "null_resource" "upgrade-nodes" {
+resource "terraform_data" "upgrade-nodes" {
 
   for_each = var.k3s_nodes
 

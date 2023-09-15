@@ -1,5 +1,28 @@
+
+data "template_file" "master-init" {
+  template = file("artifacts/templates/master-init.sh")
+  vars = {
+    master_ip = var.master_ip
+  }
+}
+
+data "template_file" "master-member" {
+  template = file("artifacts/templates/master-member.sh")
+  vars = {
+    master_ip = var.master_ip
+  }
+}
+
+data "template_file" "worker" {
+template = file("artifacts/templates/worker.sh")
+vars = {
+master_ip = var.master_ip
+}
+}
+
 resource "terraform_data" "prepare_installer" {
   depends_on = [libvirt_domain.kubeadm_nodes]
+
 
   provisioner "local-exec" {
     command = <<-EOT
@@ -31,6 +54,13 @@ resource "terraform_data" "copy_installer" {
     destination = "/root/.ssh/id_rsa.key"
   }
 
+  provisioner "remote-exec" {
+    inline = [<<EOF
+           chmod +x ./kubeadm/setup-kubeadm.sh
+           sudo ./kubeadm/setup-kubeadm.sh
+    EOF
+    ]
+  }
 }
 
 resource "terraform_data" "init_master" {
@@ -48,9 +78,7 @@ resource "terraform_data" "init_master" {
 
   provisioner "remote-exec" {
     inline = [<<EOF
-           chmod +x ./kubeadm/setup-kubeadm.sh
            chmod +x ./kubeadm/master-init.sh
-           sudo ./kubeadm/setup-kubeadm.sh
            sudo ./kubeadm/master-init.sh
     EOF
     ]
@@ -72,9 +100,6 @@ resource "terraform_data" "add_master" {
 
   provisioner "remote-exec" {
   inline = [<<EOF
-           chmod +x ./kubeadm/setup-kubeadm.sh
-           sudo ./kubeadm/setup-kubeadm.sh
-
            chmod 400 .ssh/id_rsa.key
            JOIN=$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no ${var.master_ip} -- cat join_cmd | tr '\\' ' ')
            $JOIN
@@ -98,8 +123,6 @@ resource "terraform_data" "add_worker" {
 
   provisioner "remote-exec" {
     inline = [<<EOF
-           chmod +x ./kubeadm/setup-kubeadm.sh
-           sudo ./kubeadm/setup-kubeadm.sh
            chmod +x ./kubeadm/worker.sh
            sudo ./kubeadm/worker.sh
            chmod 400 .ssh/id_rsa.key

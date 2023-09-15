@@ -20,27 +20,6 @@ resource "tls_private_key" "generic-ssh-key" {
   }
 }
 
-data "template_file" "master-init" {
-  template = file("artifacts/templates/master-init.sh")
-  vars = {
-    master_ip = var.master_ip
-  }
-}
-
-data "template_file" "master-member" {
-  template = file("artifacts/templates/master-member.sh")
-  vars = {
-    master_ip = var.master_ip
-  }
-}
-
-data "template_file" "worker" {
-  template = file("artifacts/templates/worker.sh")
-  vars = {
-    master_ip = var.master_ip
-  }
-}
-
 data "template_file" "cloud_inits" {
   for_each = var.kubeadm_nodes
   template = file("${path.module}/artifacts/config/cloud_init.cfg")

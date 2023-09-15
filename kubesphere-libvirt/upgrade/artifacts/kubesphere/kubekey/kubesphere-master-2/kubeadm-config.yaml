@@ -4,17 +4,17 @@ kind: ClusterConfiguration
 etcd:
   external:
     endpoints:
-    - https://192.168.122.151:2379
     - https://192.168.122.152:2379
+    - https://192.168.122.151:2379
     caFile: /etc/ssl/etcd/ssl/ca.pem
-    certFile: /etc/ssl/etcd/ssl/node-kubesphere-master-1.pem
-    keyFile: /etc/ssl/etcd/ssl/node-kubesphere-master-1-key.pem
+    certFile: /etc/ssl/etcd/ssl/node-kubesphere-master-2.pem
+    keyFile: /etc/ssl/etcd/ssl/node-kubesphere-master-2-key.pem
 dns:
   type: CoreDNS
   imageRepository: coredns
   imageTag: 1.8.6
 imageRepository: kubesphere
-kubernetesVersion: v1.23.10
+kubernetesVersion: v1.24.1
 certificatesDir: /etc/kubernetes/pki
 clusterName: cluster.local
 controlPlaneEndpoint: lb.kubesphere.local:6443
@@ -25,7 +25,7 @@ networking:
 apiServer:
   extraArgs:
     bind-address: 0.0.0.0
-    feature-gates: TTLAfterFinished=true,ExpandCSIVolumes=true,CSIStorageCapacity=true,RotateKubeletServerCertificate=true
+    feature-gates: RotateKubeletServerCertificate=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
   certSANs:
     - "kubernetes"
     - "kubernetes.default"
@@ -49,7 +49,7 @@ controllerManager:
     node-cidr-mask-size: "24"
     bind-address: 0.0.0.0
     cluster-signing-duration: 87600h
-    feature-gates: RotateKubeletServerCertificate=true,TTLAfterFinished=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
+    feature-gates: RotateKubeletServerCertificate=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
   extraVolumes:
   - name: host-time
     hostPath: /etc/localtime
@@ -58,13 +58,13 @@ controllerManager:
 scheduler:
   extraArgs:
     bind-address: 0.0.0.0
-    feature-gates: TTLAfterFinished=true,ExpandCSIVolumes=true,CSIStorageCapacity=true,RotateKubeletServerCertificate=true
+    feature-gates: RotateKubeletServerCertificate=true,ExpandCSIVolumes=true,CSIStorageCapacity=true
 
 ---
 apiVersion: kubeadm.k8s.io/v1beta2
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: 192.168.122.151
+  advertiseAddress: 192.168.122.152
   bindPort: 6443
 nodeRegistration:
   criSocket: unix:///run/containerd/containerd.sock
@@ -101,7 +101,6 @@ featureGates:
   CSIStorageCapacity: true
   ExpandCSIVolumes: true
   RotateKubeletServerCertificate: true
-  TTLAfterFinished: true
 kubeReserved:
   cpu: 200m
   memory: 250Mi

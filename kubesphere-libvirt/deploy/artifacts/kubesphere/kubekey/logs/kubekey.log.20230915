@@ -1,0 +1,1320 @@
+00:01:58 UTC [GreetingsModule] Greetings
+00:01:58 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:01:58 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:01:59 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:01:59 UTC success: [kubesphere-worker-1]
+00:01:59 UTC success: [kubesphere-master-1]
+00:01:59 UTC success: [kubesphere-master-2]
+00:01:59 UTC [NodePreCheckModule] A pre-check on nodes
+00:01:59 UTC success: [kubesphere-master-1]
+00:01:59 UTC success: [kubesphere-worker-1]
+00:01:59 UTC success: [kubesphere-master-2]
+00:01:59 UTC [ConfirmModule] Display confirmation form
+00:01:59 UTC success: [LocalHost]
+00:01:59 UTC [NodeBinariesModule] Download installation binaries
+00:01:59 UTC message: [localhost]
+downloading amd64 kubeadm v1.23.10 ...
+00:01:59 UTC message: [localhost]
+kubeadm is existed
+00:01:59 UTC message: [localhost]
+downloading amd64 kubelet v1.23.10 ...
+00:01:59 UTC message: [localhost]
+kubelet is existed
+00:01:59 UTC message: [localhost]
+downloading amd64 kubectl v1.23.10 ...
+00:01:59 UTC message: [localhost]
+kubectl is existed
+00:01:59 UTC message: [localhost]
+downloading amd64 helm v3.9.0 ...
+00:02:00 UTC message: [localhost]
+helm is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 kubecni v1.2.0 ...
+00:02:00 UTC message: [localhost]
+kubecni is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 crictl v1.24.0 ...
+00:02:00 UTC message: [localhost]
+crictl is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 etcd v3.4.13 ...
+00:02:00 UTC message: [localhost]
+etcd is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 containerd 1.6.4 ...
+00:02:00 UTC message: [localhost]
+containerd is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 runc v1.1.1 ...
+00:02:00 UTC message: [localhost]
+runc is existed
+00:02:00 UTC message: [localhost]
+downloading amd64 calicoctl v3.23.2 ...
+00:02:00 UTC message: [localhost]
+calicoctl is existed
+00:02:00 UTC success: [LocalHost]
+00:02:00 UTC [ConfigureOSModule] Get OS release
+00:02:00 UTC success: [kubesphere-master-1]
+00:02:00 UTC success: [kubesphere-worker-1]
+00:02:00 UTC success: [kubesphere-master-2]
+00:02:00 UTC [ConfigureOSModule] Prepare to init OS
+00:02:00 UTC success: [kubesphere-worker-1]
+00:02:00 UTC success: [kubesphere-master-1]
+00:02:00 UTC success: [kubesphere-master-2]
+00:02:00 UTC [ConfigureOSModule] Generate init os script
+00:02:00 UTC success: [kubesphere-master-2]
+00:02:00 UTC success: [kubesphere-master-1]
+00:02:00 UTC success: [kubesphere-worker-1]
+00:02:00 UTC [ConfigureOSModule] Exec init os script
+00:02:02 UTC stdout: [kubesphere-master-2]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:02:02 UTC stdout: [kubesphere-worker-1]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:02:02 UTC stdout: [kubesphere-master-1]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:02:02 UTC success: [kubesphere-master-2]
+00:02:02 UTC success: [kubesphere-worker-1]
+00:02:02 UTC success: [kubesphere-master-1]
+00:02:02 UTC [ConfigureOSModule] configure the ntp server for each node
+00:02:02 UTC skipped: [kubesphere-worker-1]
+00:02:02 UTC skipped: [kubesphere-master-1]
+00:02:02 UTC skipped: [kubesphere-master-2]
+00:02:02 UTC [KubernetesStatusModule] Get kubernetes cluster status
+00:02:02 UTC success: [kubesphere-master-1]
+00:02:02 UTC success: [kubesphere-master-2]
+00:02:02 UTC [InstallContainerModule] Sync containerd binaries
+00:02:02 UTC skipped: [kubesphere-master-2]
+00:02:02 UTC skipped: [kubesphere-master-1]
+00:02:02 UTC skipped: [kubesphere-worker-1]
+00:02:02 UTC [InstallContainerModule] Sync crictl binaries
+00:02:03 UTC success: [kubesphere-master-1]
+00:02:03 UTC success: [kubesphere-worker-1]
+00:02:03 UTC success: [kubesphere-master-2]
+00:02:03 UTC [InstallContainerModule] Generate containerd service
+00:02:03 UTC skipped: [kubesphere-master-2]
+00:02:03 UTC skipped: [kubesphere-master-1]
+00:02:03 UTC skipped: [kubesphere-worker-1]
+00:02:03 UTC [InstallContainerModule] Generate containerd config
+00:02:03 UTC skipped: [kubesphere-worker-1]
+00:02:03 UTC skipped: [kubesphere-master-1]
+00:02:03 UTC skipped: [kubesphere-master-2]
+00:02:03 UTC [InstallContainerModule] Generate crictl config
+00:02:03 UTC skipped: [kubesphere-master-1]
+00:02:03 UTC skipped: [kubesphere-master-2]
+00:02:03 UTC skipped: [kubesphere-worker-1]
+00:02:03 UTC [InstallContainerModule] Enable containerd
+00:02:03 UTC skipped: [kubesphere-worker-1]
+00:02:03 UTC skipped: [kubesphere-master-2]
+00:02:03 UTC skipped: [kubesphere-master-1]
+00:02:03 UTC [PullModule] Start to pull images on all nodes
+00:02:03 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/pause:3.6
+00:02:03 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/pause:3.6
+00:02:03 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/pause:3.6
+00:02:04 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:02:04 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-apiserver:v1.23.10
+00:02:04 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-apiserver:v1.23.10
+00:02:06 UTC message: [kubesphere-worker-1]
+downloading image: coredns/coredns:1.8.6
+00:02:06 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-controller-manager:v1.23.10
+00:02:06 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-controller-manager:v1.23.10
+00:02:07 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-scheduler:v1.23.10
+00:02:07 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:02:07 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-scheduler:v1.23.10
+00:02:09 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:02:09 UTC message: [kubesphere-worker-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:02:09 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:02:10 UTC message: [kubesphere-master-1]
+downloading image: coredns/coredns:1.8.6
+00:02:10 UTC message: [kubesphere-master-2]
+downloading image: coredns/coredns:1.8.6
+00:02:10 UTC message: [kubesphere-worker-1]
+downloading image: calico/cni:v3.23.2
+00:02:12 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:02:12 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:02:12 UTC message: [kubesphere-worker-1]
+downloading image: calico/node:v3.23.2
+00:02:13 UTC message: [kubesphere-master-2]
+downloading image: calico/kube-controllers:v3.23.2
+00:02:13 UTC message: [kubesphere-worker-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:02:14 UTC message: [kubesphere-master-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:02:15 UTC message: [kubesphere-master-2]
+downloading image: calico/cni:v3.23.2
+00:02:15 UTC message: [kubesphere-master-1]
+downloading image: calico/cni:v3.23.2
+00:02:17 UTC message: [kubesphere-master-1]
+downloading image: calico/node:v3.23.2
+00:02:17 UTC message: [kubesphere-master-2]
+downloading image: calico/node:v3.23.2
+00:02:18 UTC message: [kubesphere-master-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:02:18 UTC message: [kubesphere-master-2]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:02:20 UTC success: [kubesphere-worker-1]
+00:02:20 UTC success: [kubesphere-master-1]
+00:02:20 UTC success: [kubesphere-master-2]
+00:02:20 UTC [ETCDPreCheckModule] Get etcd status
+00:02:20 UTC success: [kubesphere-master-1]
+00:02:20 UTC success: [kubesphere-master-2]
+00:02:20 UTC [CertsModule] Fetch etcd certs
+00:02:20 UTC success: [kubesphere-master-1]
+00:02:20 UTC skipped: [kubesphere-master-2]
+00:02:20 UTC [CertsModule] Generate etcd Certs
+00:02:20 UTC success: [LocalHost]
+00:02:20 UTC [CertsModule] Synchronize certs file
+00:02:20 UTC success: [kubesphere-master-2]
+00:02:20 UTC success: [kubesphere-master-1]
+00:02:20 UTC [CertsModule] Synchronize certs file to master
+00:02:20 UTC skipped: [kubesphere-master-2]
+00:02:20 UTC skipped: [kubesphere-master-1]
+00:02:20 UTC [InstallETCDBinaryModule] Install etcd using binary
+00:02:21 UTC success: [kubesphere-master-1]
+00:02:21 UTC success: [kubesphere-master-2]
+00:02:21 UTC [InstallETCDBinaryModule] Generate etcd service
+00:02:21 UTC success: [kubesphere-master-2]
+00:02:21 UTC success: [kubesphere-master-1]
+00:02:21 UTC [InstallETCDBinaryModule] Generate access address
+00:02:21 UTC skipped: [kubesphere-master-2]
+00:02:21 UTC success: [kubesphere-master-1]
+00:02:21 UTC [ETCDConfigureModule] Health check on exist etcd
+00:02:21 UTC skipped: [kubesphere-master-2]
+00:02:21 UTC skipped: [kubesphere-master-1]
+00:02:21 UTC [ETCDConfigureModule] Generate etcd.env config on new etcd
+00:02:21 UTC success: [kubesphere-master-1]
+00:02:21 UTC success: [kubesphere-master-2]
+00:02:21 UTC [ETCDConfigureModule] Refresh etcd.env config on all etcd
+00:02:21 UTC success: [kubesphere-master-1]
+00:02:21 UTC success: [kubesphere-master-2]
+00:02:21 UTC [ETCDConfigureModule] Restart etcd
+00:02:28 UTC stdout: [kubesphere-master-1]
+Created symlink /etc/systemd/system/multi-user.target.wants/etcd.service → /etc/systemd/system/etcd.service.
+00:02:28 UTC stdout: [kubesphere-master-2]
+Created symlink /etc/systemd/system/multi-user.target.wants/etcd.service → /etc/systemd/system/etcd.service.
+00:02:28 UTC success: [kubesphere-master-1]
+00:02:28 UTC success: [kubesphere-master-2]
+00:02:28 UTC [ETCDConfigureModule] Health check on all etcd
+00:02:28 UTC success: [kubesphere-master-1]
+00:02:28 UTC success: [kubesphere-master-2]
+00:02:28 UTC [ETCDConfigureModule] Refresh etcd.env config to exist mode on all etcd
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC [ETCDConfigureModule] Health check on all etcd
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC [ETCDBackupModule] Backup etcd data regularly
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC [ETCDBackupModule] Generate backup ETCD service
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC [ETCDBackupModule] Generate backup ETCD timer
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC [ETCDBackupModule] Enable backup etcd service
+00:02:29 UTC success: [kubesphere-master-2]
+00:02:29 UTC success: [kubesphere-master-1]
+00:02:29 UTC [InstallKubeBinariesModule] Synchronize kubernetes binaries
+00:02:33 UTC success: [kubesphere-master-2]
+00:02:33 UTC success: [kubesphere-master-1]
+00:02:33 UTC success: [kubesphere-worker-1]
+00:02:33 UTC [InstallKubeBinariesModule] Change kubelet mode
+00:02:33 UTC success: [kubesphere-worker-1]
+00:02:33 UTC success: [kubesphere-master-1]
+00:02:33 UTC success: [kubesphere-master-2]
+00:02:33 UTC [InstallKubeBinariesModule] Generate kubelet service
+00:02:33 UTC success: [kubesphere-master-1]
+00:02:33 UTC success: [kubesphere-worker-1]
+00:02:33 UTC success: [kubesphere-master-2]
+00:02:33 UTC [InstallKubeBinariesModule] Enable kubelet service
+00:02:33 UTC success: [kubesphere-master-1]
+00:02:33 UTC success: [kubesphere-master-2]
+00:02:33 UTC success: [kubesphere-worker-1]
+00:02:33 UTC [InstallKubeBinariesModule] Generate kubelet env
+00:02:33 UTC success: [kubesphere-worker-1]
+00:02:33 UTC success: [kubesphere-master-1]
+00:02:33 UTC success: [kubesphere-master-2]
+00:02:33 UTC [InitKubernetesModule] Generate kubeadm config
+00:02:34 UTC skipped: [kubesphere-master-2]
+00:02:34 UTC success: [kubesphere-master-1]
+00:02:34 UTC [InitKubernetesModule] Generate audit policy
+00:02:34 UTC skipped: [kubesphere-master-2]
+00:02:34 UTC skipped: [kubesphere-master-1]
+00:02:34 UTC [InitKubernetesModule] Generate audit webhook
+00:02:34 UTC skipped: [kubesphere-master-2]
+00:02:34 UTC skipped: [kubesphere-master-1]
+00:02:34 UTC [InitKubernetesModule] Init cluster using kubeadm
+00:02:49 UTC stdout: [kubesphere-master-1]
+W0915 00:02:34.011662    3697 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[init] Using Kubernetes version: v1.23.10
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local kubesphere-master-1 kubesphere-master-1.cluster.local kubesphere-master-2 kubesphere-master-2.cluster.local kubesphere-worker-1 kubesphere-worker-1.cluster.local lb.kubesphere.local localhost] and IPs [10.233.0.1 192.168.122.151 127.0.0.1 192.168.122.152 192.168.122.181]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] External etcd mode: Skipping etcd/ca certificate authority generation
+[certs] External etcd mode: Skipping etcd/server certificate generation
+[certs] External etcd mode: Skipping etcd/peer certificate generation
+[certs] External etcd mode: Skipping etcd/healthcheck-client certificate generation
+[certs] External etcd mode: Skipping apiserver-etcd-client certificate generation
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 11.501446 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.23" in namespace kube-system with the configuration for the kubelets in the cluster
+NOTE: The "kubelet-config-1.23" naming of the kubelet ConfigMap is deprecated. Once the UnversionedKubeletConfigMap feature gate graduates to Beta the default name will become just "kubelet-config". Kubeadm upgrade will handle this transition transparently.
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node kubesphere-master-1 as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node kubesphere-master-1 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: i5df7h.dfugfz4orsrdwtqd
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of control-plane nodes by copying certificate authorities
+and service account keys on each node and then running the following as root:
+
+  kubeadm join lb.kubesphere.local:6443 --token i5df7h.dfugfz4orsrdwtqd \
+	--discovery-token-ca-cert-hash sha256:16c386ca5b83eb37d350b48154f0a3a79f584e5083d86d0f27b66eb776b3fb52 \
+	--control-plane 
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join lb.kubesphere.local:6443 --token i5df7h.dfugfz4orsrdwtqd \
+	--discovery-token-ca-cert-hash sha256:16c386ca5b83eb37d350b48154f0a3a79f584e5083d86d0f27b66eb776b3fb52
+00:02:49 UTC skipped: [kubesphere-master-2]
+00:02:49 UTC success: [kubesphere-master-1]
+00:02:49 UTC [InitKubernetesModule] Copy admin.conf to ~/.kube/config
+00:02:49 UTC skipped: [kubesphere-master-2]
+00:02:49 UTC success: [kubesphere-master-1]
+00:02:49 UTC [InitKubernetesModule] Remove master taint
+00:02:49 UTC skipped: [kubesphere-master-2]
+00:02:49 UTC skipped: [kubesphere-master-1]
+00:02:49 UTC [ClusterDNSModule] Generate coredns service
+00:02:50 UTC skipped: [kubesphere-master-2]
+00:02:50 UTC success: [kubesphere-master-1]
+00:02:50 UTC [ClusterDNSModule] Override coredns service
+00:02:50 UTC stdout: [kubesphere-master-1]
+service "kube-dns" deleted
+00:02:50 UTC stdout: [kubesphere-master-1]
+service/coredns created
+Warning: resource clusterroles/system:coredns is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+clusterrole.rbac.authorization.k8s.io/system:coredns configured
+00:02:50 UTC skipped: [kubesphere-master-2]
+00:02:50 UTC success: [kubesphere-master-1]
+00:02:50 UTC [ClusterDNSModule] Generate nodelocaldns
+00:02:50 UTC skipped: [kubesphere-master-2]
+00:02:50 UTC success: [kubesphere-master-1]
+00:02:50 UTC [ClusterDNSModule] Deploy nodelocaldns
+00:02:50 UTC stdout: [kubesphere-master-1]
+serviceaccount/nodelocaldns created
+daemonset.apps/nodelocaldns created
+00:02:50 UTC skipped: [kubesphere-master-2]
+00:02:50 UTC success: [kubesphere-master-1]
+00:02:50 UTC [ClusterDNSModule] Generate nodelocaldns configmap
+00:02:50 UTC skipped: [kubesphere-master-2]
+00:02:50 UTC success: [kubesphere-master-1]
+00:02:50 UTC [ClusterDNSModule] Apply nodelocaldns configmap
+00:02:51 UTC stdout: [kubesphere-master-1]
+configmap/nodelocaldns created
+00:02:51 UTC skipped: [kubesphere-master-2]
+00:02:51 UTC success: [kubesphere-master-1]
+00:02:51 UTC [KubernetesStatusModule] Get kubernetes cluster status
+00:02:51 UTC stdout: [kubesphere-master-1]
+v1.23.10
+00:02:51 UTC stdout: [kubesphere-master-1]
+kubesphere-master-1   v1.23.10   [map[address:192.168.122.151 type:InternalIP] map[address:kubesphere-master-1 type:Hostname]]
+00:02:51 UTC stdout: [kubesphere-master-1]
+W0915 00:02:51.090311    4358 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[upload-certs] Storing the certificates in Secret "kubeadm-certs" in the "kube-system" Namespace
+[upload-certs] Using certificate key:
+78ecba569eb9900d33ca84d36e9055e2a0cf6605f426c70215e00f1179750632
+00:02:51 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:02:51 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:02:51 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:02:51 UTC stdout: [kubesphere-master-1]
+mrrut0.nwyvnxoh059ljz1f
+00:02:51 UTC success: [kubesphere-master-1]
+00:02:51 UTC success: [kubesphere-master-2]
+00:02:51 UTC [JoinNodesModule] Generate kubeadm config
+00:02:51 UTC skipped: [kubesphere-master-1]
+00:02:51 UTC success: [kubesphere-master-2]
+00:02:51 UTC success: [kubesphere-worker-1]
+00:02:51 UTC [JoinNodesModule] Generate audit policy
+00:02:51 UTC skipped: [kubesphere-master-1]
+00:02:51 UTC skipped: [kubesphere-master-2]
+00:02:51 UTC [JoinNodesModule] Generate audit webhook
+00:02:51 UTC skipped: [kubesphere-master-2]
+00:02:51 UTC skipped: [kubesphere-master-1]
+00:02:51 UTC [JoinNodesModule] Join control-plane node
+00:03:11 UTC stdout: [kubesphere-master-2]
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0915 00:03:04.392511    3724 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+W0915 00:03:04.395049    3724 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[preflight] Running pre-flight checks before initializing the new control plane instance
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[download-certs] Downloading the certificates in Secret "kubeadm-certs" in the "kube-system" Namespace
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local kubesphere-master-1 kubesphere-master-1.cluster.local kubesphere-master-2 kubesphere-master-2.cluster.local kubesphere-worker-1 kubesphere-worker-1.cluster.local lb.kubesphere.local localhost] and IPs [10.233.0.1 192.168.122.152 127.0.0.1 192.168.122.151 192.168.122.181]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[certs] Using the existing "sa" key
+[kubeconfig] Generating kubeconfig files
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[check-etcd] Skipping etcd check in external mode
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+[control-plane-join] using external etcd - no local stacked instance added
+The 'update-status' phase is deprecated and will be removed in a future release. Currently it performs no operation
+[mark-control-plane] Marking the node kubesphere-master-2 as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node kubesphere-master-2 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+
+This node has joined the cluster and a new control plane instance was created:
+
+* Certificate signing request was sent to apiserver and approval was received.
+* The Kubelet was informed of the new secure connection details.
+* Control plane (master) label and taint were applied to the new node.
+* The Kubernetes control plane instances scaled up.
+
+
+To start administering your cluster from this node, you need to run the following as a regular user:
+
+	mkdir -p $HOME/.kube
+	sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+	sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Run 'kubectl get nodes' to see this node join the cluster.
+00:03:11 UTC skipped: [kubesphere-master-1]
+00:03:11 UTC success: [kubesphere-master-2]
+00:03:11 UTC [JoinNodesModule] Join worker node
+00:03:18 UTC stdout: [kubesphere-worker-1]
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0915 00:03:12.086877    3165 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+W0915 00:03:12.089205    3165 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+00:03:18 UTC skipped: [kubesphere-master-2]
+00:03:18 UTC success: [kubesphere-worker-1]
+00:03:18 UTC [JoinNodesModule] Copy admin.conf to ~/.kube/config
+00:03:18 UTC skipped: [kubesphere-master-1]
+00:03:18 UTC success: [kubesphere-master-2]
+00:03:18 UTC [JoinNodesModule] Remove master taint
+00:03:19 UTC stdout: [kubesphere-master-2]
+node/kubesphere-master-2 untainted
+00:03:19 UTC stdout: [kubesphere-master-2]
+error: taint "node-role.kubernetes.io/control-plane:NoSchedule" not found
+00:03:19 UTC [WARN] Failed to exec command: sudo -E /bin/bash -c "/usr/local/bin/kubectl taint nodes kubesphere-master-2 node-role.kubernetes.io/control-plane=:NoSchedule-" 
+error: taint "node-role.kubernetes.io/control-plane:NoSchedule" not found: Process exited with status 1
+00:03:19 UTC skipped: [kubesphere-master-1]
+00:03:19 UTC success: [kubesphere-master-2]
+00:03:19 UTC [JoinNodesModule] Add worker label to all nodes
+00:03:19 UTC stdout: [kubesphere-master-1]
+node/kubesphere-master-2 labeled
+00:03:19 UTC stdout: [kubesphere-master-1]
+node/kubesphere-worker-1 labeled
+00:03:19 UTC success: [kubesphere-master-1]
+00:03:19 UTC skipped: [kubesphere-master-2]
+00:03:19 UTC [DeployNetworkPluginModule] Generate calico
+00:03:19 UTC skipped: [kubesphere-master-2]
+00:03:19 UTC success: [kubesphere-master-1]
+00:03:19 UTC [DeployNetworkPluginModule] Deploy calico
+00:03:21 UTC stdout: [kubesphere-master-1]
+configmap/calico-config created
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrole.rbac.authorization.k8s.io/calico-node created
+clusterrolebinding.rbac.authorization.k8s.io/calico-node created
+daemonset.apps/calico-node created
+serviceaccount/calico-node created
+deployment.apps/calico-kube-controllers created
+serviceaccount/calico-kube-controllers created
+poddisruptionbudget.policy/calico-kube-controllers created
+00:03:21 UTC skipped: [kubesphere-master-2]
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC [ConfigureKubernetesModule] Configure kubernetes
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC skipped: [kubesphere-master-2]
+00:03:21 UTC [ChownModule] Chown user $HOME/.kube dir
+00:03:21 UTC success: [kubesphere-worker-1]
+00:03:21 UTC success: [kubesphere-master-2]
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:03:21 UTC success: [kubesphere-master-2]
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:03:21 UTC success: [kubesphere-master-2]
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:03:21 UTC success: [kubesphere-master-2]
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:03:21 UTC success: [kubesphere-master-1]
+00:03:21 UTC success: [kubesphere-master-2]
+00:03:21 UTC [SaveKubeConfigModule] Save kube config as a configmap
+00:03:21 UTC success: [LocalHost]
+00:03:21 UTC [AddonsModule] Install addons
+00:03:21 UTC success: [LocalHost]
+00:03:21 UTC Pipeline[CreateClusterPipeline] execute successfully
+00:12:45 UTC [GreetingsModule] Greetings
+00:12:46 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:12:46 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:12:47 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:12:47 UTC success: [kubesphere-worker-1]
+00:12:47 UTC success: [kubesphere-master-2]
+00:12:47 UTC success: [kubesphere-master-1]
+00:12:47 UTC [NodePreCheckModule] A pre-check on nodes
+00:12:47 UTC success: [kubesphere-worker-1]
+00:12:47 UTC success: [kubesphere-master-1]
+00:12:47 UTC success: [kubesphere-master-2]
+00:12:47 UTC [ConfirmModule] Display confirmation form
+00:12:47 UTC success: [LocalHost]
+00:12:47 UTC [NodeBinariesModule] Download installation binaries
+00:12:47 UTC message: [localhost]
+downloading amd64 kubeadm v1.23.10 ...
+00:12:47 UTC message: [localhost]
+kubeadm is existed
+00:12:47 UTC message: [localhost]
+downloading amd64 kubelet v1.23.10 ...
+00:12:47 UTC message: [localhost]
+kubelet is existed
+00:12:47 UTC message: [localhost]
+downloading amd64 kubectl v1.23.10 ...
+00:12:47 UTC message: [localhost]
+kubectl is existed
+00:12:47 UTC message: [localhost]
+downloading amd64 helm v3.9.0 ...
+00:12:47 UTC message: [localhost]
+helm is existed
+00:12:47 UTC message: [localhost]
+downloading amd64 kubecni v1.2.0 ...
+00:12:47 UTC message: [localhost]
+kubecni is existed
+00:12:47 UTC message: [localhost]
+downloading amd64 crictl v1.24.0 ...
+00:12:48 UTC message: [localhost]
+crictl is existed
+00:12:48 UTC message: [localhost]
+downloading amd64 etcd v3.4.13 ...
+00:12:48 UTC message: [localhost]
+etcd is existed
+00:12:48 UTC message: [localhost]
+downloading amd64 containerd 1.6.4 ...
+00:12:48 UTC message: [localhost]
+containerd is existed
+00:12:48 UTC message: [localhost]
+downloading amd64 runc v1.1.1 ...
+00:12:48 UTC message: [localhost]
+runc is existed
+00:12:48 UTC message: [localhost]
+downloading amd64 calicoctl v3.23.2 ...
+00:12:48 UTC message: [localhost]
+calicoctl is existed
+00:12:48 UTC success: [LocalHost]
+00:12:48 UTC [ConfigureOSModule] Get OS release
+00:12:48 UTC success: [kubesphere-master-1]
+00:12:48 UTC success: [kubesphere-worker-1]
+00:12:48 UTC success: [kubesphere-master-2]
+00:12:48 UTC [ConfigureOSModule] Prepare to init OS
+00:12:48 UTC success: [kubesphere-worker-1]
+00:12:48 UTC success: [kubesphere-master-2]
+00:12:48 UTC success: [kubesphere-master-1]
+00:12:48 UTC [ConfigureOSModule] Generate init os script
+00:12:48 UTC success: [kubesphere-master-1]
+00:12:48 UTC success: [kubesphere-master-2]
+00:12:48 UTC success: [kubesphere-worker-1]
+00:12:48 UTC [ConfigureOSModule] Exec init os script
+00:12:50 UTC stdout: [kubesphere-worker-1]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:12:50 UTC stdout: [kubesphere-master-2]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:12:50 UTC stdout: [kubesphere-master-1]
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-arptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_local_reserved_ports = 30000-32767
+net.core.netdev_max_backlog = 65535
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 32768
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.neigh.default.gc_thresh1 = 512
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_max_tw_buckets = 1048576
+net.ipv4.tcp_max_orphans = 65535
+net.ipv4.udp_rmem_min = 131072
+net.ipv4.udp_wmem_min = 131072
+net.ipv4.conf.all.arp_accept = 1
+net.ipv4.conf.default.arp_accept = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.default.arp_ignore = 1
+vm.max_map_count = 262144
+vm.swappiness = 0
+vm.overcommit_memory = 0
+fs.inotify.max_user_instances = 524288
+fs.inotify.max_user_watches = 524288
+fs.pipe-max-size = 4194304
+fs.aio-max-nr = 262144
+kernel.pid_max = 65535
+kernel.watchdog_thresh = 5
+kernel.hung_task_timeout_secs = 5
+00:12:50 UTC success: [kubesphere-worker-1]
+00:12:50 UTC success: [kubesphere-master-2]
+00:12:50 UTC success: [kubesphere-master-1]
+00:12:50 UTC [ConfigureOSModule] configure the ntp server for each node
+00:12:50 UTC skipped: [kubesphere-worker-1]
+00:12:50 UTC skipped: [kubesphere-master-1]
+00:12:50 UTC skipped: [kubesphere-master-2]
+00:12:50 UTC [KubernetesStatusModule] Get kubernetes cluster status
+00:12:50 UTC success: [kubesphere-master-1]
+00:12:50 UTC success: [kubesphere-master-2]
+00:12:50 UTC [InstallContainerModule] Sync containerd binaries
+00:12:50 UTC skipped: [kubesphere-master-2]
+00:12:50 UTC skipped: [kubesphere-master-1]
+00:12:50 UTC skipped: [kubesphere-worker-1]
+00:12:50 UTC [InstallContainerModule] Sync crictl binaries
+00:12:50 UTC success: [kubesphere-master-1]
+00:12:50 UTC success: [kubesphere-worker-1]
+00:12:50 UTC success: [kubesphere-master-2]
+00:12:50 UTC [InstallContainerModule] Generate containerd service
+00:12:50 UTC skipped: [kubesphere-master-1]
+00:12:50 UTC skipped: [kubesphere-worker-1]
+00:12:50 UTC skipped: [kubesphere-master-2]
+00:12:50 UTC [InstallContainerModule] Generate containerd config
+00:12:50 UTC skipped: [kubesphere-master-1]
+00:12:50 UTC skipped: [kubesphere-worker-1]
+00:12:50 UTC skipped: [kubesphere-master-2]
+00:12:50 UTC [InstallContainerModule] Generate crictl config
+00:12:50 UTC skipped: [kubesphere-master-1]
+00:12:50 UTC skipped: [kubesphere-master-2]
+00:12:50 UTC skipped: [kubesphere-worker-1]
+00:12:50 UTC [InstallContainerModule] Enable containerd
+00:12:51 UTC skipped: [kubesphere-worker-1]
+00:12:51 UTC skipped: [kubesphere-master-1]
+00:12:51 UTC skipped: [kubesphere-master-2]
+00:12:51 UTC [PullModule] Start to pull images on all nodes
+00:12:51 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/pause:3.6
+00:12:51 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/pause:3.6
+00:12:51 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/pause:3.6
+00:12:52 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:12:52 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-apiserver:v1.23.10
+00:12:52 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-apiserver:v1.23.10
+00:12:54 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-controller-manager:v1.23.10
+00:12:54 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-controller-manager:v1.23.10
+00:12:54 UTC message: [kubesphere-worker-1]
+downloading image: coredns/coredns:1.8.6
+00:12:55 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-scheduler:v1.23.10
+00:12:55 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-scheduler:v1.23.10
+00:12:55 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:12:57 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:12:57 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-proxy:v1.23.10
+00:12:57 UTC message: [kubesphere-worker-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:12:58 UTC message: [kubesphere-master-1]
+downloading image: coredns/coredns:1.8.6
+00:12:58 UTC message: [kubesphere-master-2]
+downloading image: coredns/coredns:1.8.6
+00:12:58 UTC message: [kubesphere-worker-1]
+downloading image: calico/cni:v3.23.2
+00:13:00 UTC message: [kubesphere-worker-1]
+downloading image: calico/node:v3.23.2
+00:13:00 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:13:00 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:13:01 UTC message: [kubesphere-master-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:13:01 UTC message: [kubesphere-worker-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:13:02 UTC message: [kubesphere-master-2]
+downloading image: calico/kube-controllers:v3.23.2
+00:13:03 UTC message: [kubesphere-master-1]
+downloading image: calico/cni:v3.23.2
+00:13:03 UTC message: [kubesphere-master-2]
+downloading image: calico/cni:v3.23.2
+00:13:05 UTC message: [kubesphere-master-1]
+downloading image: calico/node:v3.23.2
+00:13:05 UTC message: [kubesphere-master-2]
+downloading image: calico/node:v3.23.2
+00:13:06 UTC message: [kubesphere-master-2]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:13:06 UTC message: [kubesphere-master-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:13:08 UTC success: [kubesphere-worker-1]
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC [ETCDPreCheckModule] Get etcd status
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC [CertsModule] Fetch etcd certs
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC skipped: [kubesphere-master-2]
+00:13:08 UTC [CertsModule] Generate etcd Certs
+00:13:08 UTC success: [LocalHost]
+00:13:08 UTC [CertsModule] Synchronize certs file
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC [CertsModule] Synchronize certs file to master
+00:13:08 UTC skipped: [kubesphere-master-2]
+00:13:08 UTC skipped: [kubesphere-master-1]
+00:13:08 UTC [InstallETCDBinaryModule] Install etcd using binary
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC [InstallETCDBinaryModule] Generate etcd service
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC [InstallETCDBinaryModule] Generate access address
+00:13:08 UTC skipped: [kubesphere-master-2]
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC [ETCDConfigureModule] Health check on exist etcd
+00:13:08 UTC skipped: [kubesphere-master-2]
+00:13:08 UTC skipped: [kubesphere-master-1]
+00:13:08 UTC [ETCDConfigureModule] Generate etcd.env config on new etcd
+00:13:08 UTC success: [kubesphere-master-1]
+00:13:08 UTC success: [kubesphere-master-2]
+00:13:08 UTC [ETCDConfigureModule] Refresh etcd.env config on all etcd
+00:13:09 UTC success: [kubesphere-master-1]
+00:13:09 UTC success: [kubesphere-master-2]
+00:13:09 UTC [ETCDConfigureModule] Restart etcd
+00:13:19 UTC stdout: [kubesphere-master-2]
+Created symlink /etc/systemd/system/multi-user.target.wants/etcd.service → /etc/systemd/system/etcd.service.
+00:13:19 UTC stdout: [kubesphere-master-1]
+Created symlink /etc/systemd/system/multi-user.target.wants/etcd.service → /etc/systemd/system/etcd.service.
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC [ETCDConfigureModule] Health check on all etcd
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC [ETCDConfigureModule] Refresh etcd.env config to exist mode on all etcd
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC [ETCDConfigureModule] Health check on all etcd
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC [ETCDBackupModule] Backup etcd data regularly
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC [ETCDBackupModule] Generate backup ETCD service
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC [ETCDBackupModule] Generate backup ETCD timer
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC [ETCDBackupModule] Enable backup etcd service
+00:13:19 UTC success: [kubesphere-master-1]
+00:13:19 UTC success: [kubesphere-master-2]
+00:13:19 UTC [InstallKubeBinariesModule] Synchronize kubernetes binaries
+00:13:23 UTC success: [kubesphere-master-1]
+00:13:23 UTC success: [kubesphere-master-2]
+00:13:23 UTC success: [kubesphere-worker-1]
+00:13:23 UTC [InstallKubeBinariesModule] Change kubelet mode
+00:13:23 UTC success: [kubesphere-worker-1]
+00:13:23 UTC success: [kubesphere-master-2]
+00:13:23 UTC success: [kubesphere-master-1]
+00:13:23 UTC [InstallKubeBinariesModule] Generate kubelet service
+00:13:23 UTC success: [kubesphere-worker-1]
+00:13:23 UTC success: [kubesphere-master-1]
+00:13:23 UTC success: [kubesphere-master-2]
+00:13:23 UTC [InstallKubeBinariesModule] Enable kubelet service
+00:13:23 UTC success: [kubesphere-master-1]
+00:13:23 UTC success: [kubesphere-master-2]
+00:13:23 UTC success: [kubesphere-worker-1]
+00:13:23 UTC [InstallKubeBinariesModule] Generate kubelet env
+00:13:23 UTC success: [kubesphere-master-2]
+00:13:23 UTC success: [kubesphere-master-1]
+00:13:23 UTC success: [kubesphere-worker-1]
+00:13:23 UTC [InitKubernetesModule] Generate kubeadm config
+00:13:24 UTC skipped: [kubesphere-master-2]
+00:13:24 UTC success: [kubesphere-master-1]
+00:13:24 UTC [InitKubernetesModule] Generate audit policy
+00:13:24 UTC skipped: [kubesphere-master-2]
+00:13:24 UTC skipped: [kubesphere-master-1]
+00:13:24 UTC [InitKubernetesModule] Generate audit webhook
+00:13:24 UTC skipped: [kubesphere-master-2]
+00:13:24 UTC skipped: [kubesphere-master-1]
+00:13:24 UTC [InitKubernetesModule] Init cluster using kubeadm
+00:13:38 UTC stdout: [kubesphere-master-1]
+W0915 00:13:24.073058    3722 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[init] Using Kubernetes version: v1.23.10
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local kubesphere-master-1 kubesphere-master-1.cluster.local kubesphere-master-2 kubesphere-master-2.cluster.local kubesphere-worker-1 kubesphere-worker-1.cluster.local lb.kubesphere.local localhost] and IPs [10.233.0.1 192.168.122.151 127.0.0.1 192.168.122.152 192.168.122.181]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] External etcd mode: Skipping etcd/ca certificate authority generation
+[certs] External etcd mode: Skipping etcd/server certificate generation
+[certs] External etcd mode: Skipping etcd/peer certificate generation
+[certs] External etcd mode: Skipping etcd/healthcheck-client certificate generation
+[certs] External etcd mode: Skipping apiserver-etcd-client certificate generation
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 12.003412 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.23" in namespace kube-system with the configuration for the kubelets in the cluster
+NOTE: The "kubelet-config-1.23" naming of the kubelet ConfigMap is deprecated. Once the UnversionedKubeletConfigMap feature gate graduates to Beta the default name will become just "kubelet-config". Kubeadm upgrade will handle this transition transparently.
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node kubesphere-master-1 as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node kubesphere-master-1 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: uitbgc.i4e57h3qxjlhp2y6
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of control-plane nodes by copying certificate authorities
+and service account keys on each node and then running the following as root:
+
+  kubeadm join lb.kubesphere.local:6443 --token uitbgc.i4e57h3qxjlhp2y6 \
+	--discovery-token-ca-cert-hash sha256:49edf694173ac4d43adf54b5aa0d0618900496e2419239b02b30dc3bd13e3846 \
+	--control-plane 
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join lb.kubesphere.local:6443 --token uitbgc.i4e57h3qxjlhp2y6 \
+	--discovery-token-ca-cert-hash sha256:49edf694173ac4d43adf54b5aa0d0618900496e2419239b02b30dc3bd13e3846
+00:13:38 UTC skipped: [kubesphere-master-2]
+00:13:38 UTC success: [kubesphere-master-1]
+00:13:38 UTC [InitKubernetesModule] Copy admin.conf to ~/.kube/config
+00:13:38 UTC skipped: [kubesphere-master-2]
+00:13:38 UTC success: [kubesphere-master-1]
+00:13:38 UTC [InitKubernetesModule] Remove master taint
+00:13:38 UTC skipped: [kubesphere-master-2]
+00:13:38 UTC skipped: [kubesphere-master-1]
+00:13:38 UTC [ClusterDNSModule] Generate coredns service
+00:13:39 UTC skipped: [kubesphere-master-2]
+00:13:39 UTC success: [kubesphere-master-1]
+00:13:39 UTC [ClusterDNSModule] Override coredns service
+00:13:40 UTC stdout: [kubesphere-master-1]
+service "kube-dns" deleted
+00:13:40 UTC stdout: [kubesphere-master-1]
+service/coredns created
+Warning: resource clusterroles/system:coredns is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+clusterrole.rbac.authorization.k8s.io/system:coredns configured
+00:13:40 UTC skipped: [kubesphere-master-2]
+00:13:40 UTC success: [kubesphere-master-1]
+00:13:40 UTC [ClusterDNSModule] Generate nodelocaldns
+00:13:40 UTC skipped: [kubesphere-master-2]
+00:13:40 UTC success: [kubesphere-master-1]
+00:13:40 UTC [ClusterDNSModule] Deploy nodelocaldns
+00:13:40 UTC stdout: [kubesphere-master-1]
+serviceaccount/nodelocaldns created
+daemonset.apps/nodelocaldns created
+00:13:40 UTC skipped: [kubesphere-master-2]
+00:13:40 UTC success: [kubesphere-master-1]
+00:13:40 UTC [ClusterDNSModule] Generate nodelocaldns configmap
+00:13:40 UTC skipped: [kubesphere-master-2]
+00:13:40 UTC success: [kubesphere-master-1]
+00:13:40 UTC [ClusterDNSModule] Apply nodelocaldns configmap
+00:13:41 UTC stdout: [kubesphere-master-1]
+configmap/nodelocaldns created
+00:13:41 UTC skipped: [kubesphere-master-2]
+00:13:41 UTC success: [kubesphere-master-1]
+00:13:41 UTC [KubernetesStatusModule] Get kubernetes cluster status
+00:13:41 UTC stdout: [kubesphere-master-1]
+v1.23.10
+00:13:41 UTC stdout: [kubesphere-master-1]
+kubesphere-master-1   v1.23.10   [map[address:192.168.122.151 type:InternalIP] map[address:kubesphere-master-1 type:Hostname]]
+00:13:41 UTC stdout: [kubesphere-master-1]
+W0915 00:13:41.103617    4397 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[upload-certs] Storing the certificates in Secret "kubeadm-certs" in the "kube-system" Namespace
+[upload-certs] Using certificate key:
+e779be3a168334e8664e9f7625e9c17c2543e4736e4d0385e34b087987d4081b
+00:13:41 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:13:41 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:13:41 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:13:41 UTC stdout: [kubesphere-master-1]
+41olxs.su03adre21t04qn9
+00:13:41 UTC success: [kubesphere-master-1]
+00:13:41 UTC success: [kubesphere-master-2]
+00:13:41 UTC [JoinNodesModule] Generate kubeadm config
+00:13:41 UTC skipped: [kubesphere-master-1]
+00:13:41 UTC success: [kubesphere-master-2]
+00:13:41 UTC success: [kubesphere-worker-1]
+00:13:41 UTC [JoinNodesModule] Generate audit policy
+00:13:41 UTC skipped: [kubesphere-master-2]
+00:13:41 UTC skipped: [kubesphere-master-1]
+00:13:41 UTC [JoinNodesModule] Generate audit webhook
+00:13:41 UTC skipped: [kubesphere-master-2]
+00:13:41 UTC skipped: [kubesphere-master-1]
+00:13:41 UTC [JoinNodesModule] Join control-plane node
+00:14:01 UTC stdout: [kubesphere-master-2]
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0915 00:13:54.226213    3706 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+W0915 00:13:54.229669    3706 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[preflight] Running pre-flight checks before initializing the new control plane instance
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[download-certs] Downloading the certificates in Secret "kubeadm-certs" in the "kube-system" Namespace
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local kubesphere-master-1 kubesphere-master-1.cluster.local kubesphere-master-2 kubesphere-master-2.cluster.local kubesphere-worker-1 kubesphere-worker-1.cluster.local lb.kubesphere.local localhost] and IPs [10.233.0.1 192.168.122.152 127.0.0.1 192.168.122.151 192.168.122.181]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[certs] Using the existing "sa" key
+[kubeconfig] Generating kubeconfig files
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[check-etcd] Skipping etcd check in external mode
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+[control-plane-join] using external etcd - no local stacked instance added
+The 'update-status' phase is deprecated and will be removed in a future release. Currently it performs no operation
+[mark-control-plane] Marking the node kubesphere-master-2 as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node kubesphere-master-2 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+
+This node has joined the cluster and a new control plane instance was created:
+
+* Certificate signing request was sent to apiserver and approval was received.
+* The Kubelet was informed of the new secure connection details.
+* Control plane (master) label and taint were applied to the new node.
+* The Kubernetes control plane instances scaled up.
+
+
+To start administering your cluster from this node, you need to run the following as a regular user:
+
+	mkdir -p $HOME/.kube
+	sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+	sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Run 'kubectl get nodes' to see this node join the cluster.
+00:14:01 UTC skipped: [kubesphere-master-1]
+00:14:01 UTC success: [kubesphere-master-2]
+00:14:01 UTC [JoinNodesModule] Join worker node
+00:14:08 UTC stdout: [kubesphere-worker-1]
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0915 00:14:02.445479    3172 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+W0915 00:14:02.447646    3172 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+00:14:08 UTC skipped: [kubesphere-master-2]
+00:14:08 UTC success: [kubesphere-worker-1]
+00:14:08 UTC [JoinNodesModule] Copy admin.conf to ~/.kube/config
+00:14:08 UTC skipped: [kubesphere-master-1]
+00:14:08 UTC success: [kubesphere-master-2]
+00:14:08 UTC [JoinNodesModule] Remove master taint
+00:14:09 UTC stdout: [kubesphere-master-2]
+node/kubesphere-master-2 untainted
+00:14:09 UTC stdout: [kubesphere-master-2]
+error: taint "node-role.kubernetes.io/control-plane:NoSchedule" not found
+00:14:09 UTC [WARN] Failed to exec command: sudo -E /bin/bash -c "/usr/local/bin/kubectl taint nodes kubesphere-master-2 node-role.kubernetes.io/control-plane=:NoSchedule-" 
+error: taint "node-role.kubernetes.io/control-plane:NoSchedule" not found: Process exited with status 1
+00:14:09 UTC skipped: [kubesphere-master-1]
+00:14:09 UTC success: [kubesphere-master-2]
+00:14:09 UTC [JoinNodesModule] Add worker label to all nodes
+00:14:09 UTC stdout: [kubesphere-master-1]
+node/kubesphere-master-2 labeled
+00:14:09 UTC stdout: [kubesphere-master-1]
+node/kubesphere-worker-1 labeled
+00:14:09 UTC success: [kubesphere-master-1]
+00:14:09 UTC skipped: [kubesphere-master-2]
+00:14:09 UTC [DeployNetworkPluginModule] Generate calico
+00:14:09 UTC skipped: [kubesphere-master-2]
+00:14:09 UTC success: [kubesphere-master-1]
+00:14:09 UTC [DeployNetworkPluginModule] Deploy calico
+00:14:11 UTC stdout: [kubesphere-master-1]
+configmap/calico-config created
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrole.rbac.authorization.k8s.io/calico-node created
+clusterrolebinding.rbac.authorization.k8s.io/calico-node created
+daemonset.apps/calico-node created
+serviceaccount/calico-node created
+deployment.apps/calico-kube-controllers created
+serviceaccount/calico-kube-controllers created
+poddisruptionbudget.policy/calico-kube-controllers created
+00:14:11 UTC skipped: [kubesphere-master-2]
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC [ConfigureKubernetesModule] Configure kubernetes
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC skipped: [kubesphere-master-2]
+00:14:11 UTC [ChownModule] Chown user $HOME/.kube dir
+00:14:11 UTC success: [kubesphere-worker-1]
+00:14:11 UTC success: [kubesphere-master-2]
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC success: [kubesphere-master-2]
+00:14:11 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC success: [kubesphere-master-2]
+00:14:11 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:14:11 UTC success: [kubesphere-master-2]
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:14:11 UTC success: [kubesphere-master-2]
+00:14:11 UTC success: [kubesphere-master-1]
+00:14:11 UTC [SaveKubeConfigModule] Save kube config as a configmap
+00:14:11 UTC success: [LocalHost]
+00:14:11 UTC [AddonsModule] Install addons
+00:14:11 UTC success: [LocalHost]
+00:14:11 UTC Pipeline[CreateClusterPipeline] execute successfully

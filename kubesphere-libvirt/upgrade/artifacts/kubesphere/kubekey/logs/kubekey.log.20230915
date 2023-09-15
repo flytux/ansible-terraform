@@ -1,0 +1,735 @@
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [SetUpgradePlanModule 1/2] Set upgrade plan
+00:00:00 UTC success: [LocalHost]
+00:00:00 UTC [SetUpgradePlanModule 1/2] Generate kubeadm config
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Calculate next upgrade version
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Download installation binaries
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Start to pull images on all nodes
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Synchronize kubernetes binaries
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on master
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Get kubernetes cluster status
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on worker
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Reconfigure CoreDNS
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 1/2] Set current k8s version
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [SetUpgradePlanModule 2/2] Set upgrade plan
+00:00:00 UTC success: [LocalHost]
+00:00:00 UTC [SetUpgradePlanModule 2/2] Generate kubeadm config
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Calculate next upgrade version
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Download installation binaries
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Start to pull images on all nodes
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Synchronize kubernetes binaries
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on master
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Get kubernetes cluster status
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on worker
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC skipped: [kubesphere-worker-1]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Reconfigure CoreDNS
+00:00:00 UTC skipped: [kubesphere-master-1]
+00:00:00 UTC skipped: [kubesphere-master-2]
+00:00:00 UTC [ProgressiveUpgradeModule 2/2] Set current k8s version
+00:00:00 UTC skipped: [LocalHost]
+00:00:00 UTC [ChownModule] Chown user $HOME/.kube dir
+00:00:00 UTC success: [kubesphere-worker-1]
+00:00:00 UTC success: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC success: [kubesphere-master-2]
+00:00:00 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:00:00 UTC success: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:00:00 UTC success: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:00:00 UTC success: [kubesphere-master-2]
+00:00:00 UTC success: [kubesphere-master-1]
+00:00:00 UTC Pipeline[UpgradeClusterPipeline] execute successfully
+00:04:23 UTC [GreetingsModule] Greetings
+00:04:23 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:04:23 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:04:23 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:04:23 UTC success: [kubesphere-worker-1]
+00:04:23 UTC success: [kubesphere-master-2]
+00:04:23 UTC success: [kubesphere-master-1]
+00:04:23 UTC [NodePreCheckModule] A pre-check on nodes
+00:04:24 UTC success: [kubesphere-worker-1]
+00:04:24 UTC success: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Get KubeConfig file
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Get all nodes Kubernetes version
+00:04:24 UTC success: [kubesphere-worker-1]
+00:04:24 UTC success: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Calculate min Kubernetes version
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Check desired Kubernetes version
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Check KubeSphere version
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Check dependency matrix for KubeSphere and Kubernetes
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC skipped: [kubesphere-master-1]
+00:04:24 UTC [ClusterPreCheckModule] Get kubernetes nodes status
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [SetUpgradePlanModule 1/2] Set upgrade plan
+00:04:24 UTC success: [LocalHost]
+00:04:24 UTC [SetUpgradePlanModule 1/2] Generate kubeadm config
+00:04:24 UTC skipped: [kubesphere-master-2]
+00:04:24 UTC success: [kubesphere-master-1]
+00:04:24 UTC [ProgressiveUpgradeModule 1/2] Calculate next upgrade version
+00:04:24 UTC success: [LocalHost]
+00:04:24 UTC [ProgressiveUpgradeModule 1/2] Download installation binaries
+00:04:24 UTC message: [localhost]
+downloading amd64 kubeadm v1.24.1 ...
+00:04:24 UTC message: [localhost]
+kubeadm is existed
+00:04:24 UTC message: [localhost]
+downloading amd64 kubelet v1.24.1 ...
+00:04:25 UTC message: [localhost]
+kubelet is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 kubectl v1.24.1 ...
+00:04:25 UTC message: [localhost]
+kubectl is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 helm v3.9.0 ...
+00:04:25 UTC message: [localhost]
+helm is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 kubecni v1.2.0 ...
+00:04:25 UTC message: [localhost]
+kubecni is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 crictl v1.24.0 ...
+00:04:25 UTC message: [localhost]
+crictl is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 etcd v3.4.13 ...
+00:04:25 UTC message: [localhost]
+etcd is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 containerd 1.6.4 ...
+00:04:25 UTC message: [localhost]
+containerd is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 runc v1.1.1 ...
+00:04:25 UTC message: [localhost]
+runc is existed
+00:04:25 UTC message: [localhost]
+downloading amd64 calicoctl v3.23.2 ...
+00:04:25 UTC message: [localhost]
+calicoctl is existed
+00:04:25 UTC success: [LocalHost]
+00:04:25 UTC [ProgressiveUpgradeModule 1/2] Start to pull images on all nodes
+00:04:25 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/pause:3.7
+00:04:25 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/pause:3.7
+00:04:25 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/pause:3.7
+00:04:30 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-apiserver:v1.24.1
+00:04:30 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:04:30 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-apiserver:v1.24.1
+00:04:31 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-controller-manager:v1.24.1
+00:04:31 UTC message: [kubesphere-worker-1]
+downloading image: coredns/coredns:1.8.6
+00:04:31 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-controller-manager:v1.24.1
+00:04:33 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:04:33 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-scheduler:v1.24.1
+00:04:33 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-scheduler:v1.24.1
+00:04:34 UTC message: [kubesphere-worker-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:04:34 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:04:34 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:04:36 UTC message: [kubesphere-worker-1]
+downloading image: calico/cni:v3.23.2
+00:04:36 UTC message: [kubesphere-master-2]
+downloading image: coredns/coredns:1.8.6
+00:04:36 UTC message: [kubesphere-master-1]
+downloading image: coredns/coredns:1.8.6
+00:04:37 UTC message: [kubesphere-worker-1]
+downloading image: calico/node:v3.23.2
+00:04:37 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:04:37 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:04:39 UTC message: [kubesphere-worker-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:04:39 UTC message: [kubesphere-master-2]
+downloading image: calico/kube-controllers:v3.23.2
+00:04:39 UTC message: [kubesphere-master-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:04:40 UTC message: [kubesphere-master-1]
+downloading image: calico/cni:v3.23.2
+00:04:40 UTC message: [kubesphere-master-2]
+downloading image: calico/cni:v3.23.2
+00:04:42 UTC message: [kubesphere-master-2]
+downloading image: calico/node:v3.23.2
+00:04:42 UTC message: [kubesphere-master-1]
+downloading image: calico/node:v3.23.2
+00:04:43 UTC message: [kubesphere-master-2]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:04:43 UTC message: [kubesphere-master-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:04:45 UTC success: [kubesphere-worker-1]
+00:04:45 UTC success: [kubesphere-master-2]
+00:04:45 UTC success: [kubesphere-master-1]
+00:04:45 UTC [ProgressiveUpgradeModule 1/2] Synchronize kubernetes binaries
+00:04:50 UTC success: [kubesphere-worker-1]
+00:04:50 UTC success: [kubesphere-master-1]
+00:04:50 UTC success: [kubesphere-master-2]
+00:04:50 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on master
+00:09:03 UTC [GreetingsModule] Greetings
+00:09:04 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:09:04 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:09:04 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:09:04 UTC success: [kubesphere-master-1]
+00:09:04 UTC success: [kubesphere-worker-1]
+00:09:04 UTC success: [kubesphere-master-2]
+00:09:04 UTC [NodePreCheckModule] A pre-check on nodes
+00:09:04 UTC success: [kubesphere-master-1]
+00:09:04 UTC success: [kubesphere-master-2]
+00:09:04 UTC success: [kubesphere-worker-1]
+00:09:04 UTC [ClusterPreCheckModule] Get KubeConfig file
+00:09:04 UTC skipped: [kubesphere-master-1]
+00:09:04 UTC success: [kubesphere-master-2]
+00:09:04 UTC [ClusterPreCheckModule] Get all nodes Kubernetes version
+00:09:05 UTC success: [kubesphere-worker-1]
+00:09:05 UTC success: [kubesphere-master-2]
+00:09:05 UTC success: [kubesphere-master-1]
+00:09:05 UTC [ClusterPreCheckModule] Calculate min Kubernetes version
+00:09:05 UTC skipped: [kubesphere-master-1]
+00:09:05 UTC success: [kubesphere-master-2]
+00:09:05 UTC [ClusterPreCheckModule] Check desired Kubernetes version
+00:09:05 UTC skipped: [kubesphere-master-1]
+00:09:05 UTC success: [kubesphere-master-2]
+00:09:05 UTC [ClusterPreCheckModule] Check KubeSphere version
+00:09:05 UTC skipped: [kubesphere-master-1]
+00:09:05 UTC success: [kubesphere-master-2]
+00:09:05 UTC [ClusterPreCheckModule] Check dependency matrix for KubeSphere and Kubernetes
+00:09:05 UTC skipped: [kubesphere-master-1]
+00:09:05 UTC skipped: [kubesphere-master-2]
+00:09:05 UTC [ClusterPreCheckModule] Get kubernetes nodes status
+00:09:05 UTC skipped: [kubesphere-master-1]
+00:09:05 UTC success: [kubesphere-master-2]
+00:09:05 UTC [UpgradeConfirmModule] Display confirmation form
+00:09:09 UTC success: [LocalHost]
+00:09:09 UTC [SetUpgradePlanModule 1/2] Set upgrade plan
+00:09:09 UTC success: [LocalHost]
+00:09:09 UTC [SetUpgradePlanModule 1/2] Generate kubeadm config
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Calculate next upgrade version
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Download installation binaries
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Start to pull images on all nodes
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Synchronize kubernetes binaries
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on master
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Get kubernetes cluster status
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on worker
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Reconfigure CoreDNS
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 1/2] Set current k8s version
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [SetUpgradePlanModule 2/2] Set upgrade plan
+00:09:09 UTC success: [LocalHost]
+00:09:09 UTC [SetUpgradePlanModule 2/2] Generate kubeadm config
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Calculate next upgrade version
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Download installation binaries
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Start to pull images on all nodes
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Synchronize kubernetes binaries
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on master
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Get kubernetes cluster status
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on worker
+00:09:09 UTC skipped: [kubesphere-worker-1]
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Reconfigure CoreDNS
+00:09:09 UTC skipped: [kubesphere-master-2]
+00:09:09 UTC skipped: [kubesphere-master-1]
+00:09:09 UTC [ProgressiveUpgradeModule 2/2] Set current k8s version
+00:09:09 UTC skipped: [LocalHost]
+00:09:09 UTC [ChownModule] Chown user $HOME/.kube dir
+00:09:09 UTC success: [kubesphere-worker-1]
+00:09:09 UTC success: [kubesphere-master-1]
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:09:09 UTC success: [kubesphere-master-1]
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC success: [kubesphere-master-1]
+00:09:09 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC success: [kubesphere-master-1]
+00:09:09 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:09:09 UTC success: [kubesphere-master-2]
+00:09:09 UTC success: [kubesphere-master-1]
+00:09:09 UTC Pipeline[UpgradeClusterPipeline] execute successfully
+00:10:30 UTC [GreetingsModule] Greetings
+00:10:30 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:10:30 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:10:31 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:10:31 UTC success: [kubesphere-worker-1]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC success: [kubesphere-master-2]
+00:10:31 UTC [NodePreCheckModule] A pre-check on nodes
+00:10:31 UTC success: [kubesphere-worker-1]
+00:10:31 UTC success: [kubesphere-master-2]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Get KubeConfig file
+00:10:31 UTC skipped: [kubesphere-master-2]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Get all nodes Kubernetes version
+00:10:31 UTC success: [kubesphere-worker-1]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC success: [kubesphere-master-2]
+00:10:31 UTC [ClusterPreCheckModule] Calculate min Kubernetes version
+00:10:31 UTC skipped: [kubesphere-master-2]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Check desired Kubernetes version
+00:10:31 UTC skipped: [kubesphere-master-2]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Check KubeSphere version
+00:10:31 UTC skipped: [kubesphere-master-2]
+00:10:31 UTC success: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Check dependency matrix for KubeSphere and Kubernetes
+00:10:31 UTC skipped: [kubesphere-master-2]
+00:10:31 UTC skipped: [kubesphere-master-1]
+00:10:31 UTC [ClusterPreCheckModule] Get kubernetes nodes status
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC [SetUpgradePlanModule 1/2] Set upgrade plan
+00:10:32 UTC success: [LocalHost]
+00:10:32 UTC [SetUpgradePlanModule 1/2] Generate kubeadm config
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Calculate next upgrade version
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Download installation binaries
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Start to pull images on all nodes
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Synchronize kubernetes binaries
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on master
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Get kubernetes cluster status
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on worker
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Reconfigure CoreDNS
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 1/2] Set current k8s version
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [SetUpgradePlanModule 2/2] Set upgrade plan
+00:10:32 UTC success: [LocalHost]
+00:10:32 UTC [SetUpgradePlanModule 2/2] Generate kubeadm config
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Calculate next upgrade version
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Download installation binaries
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Start to pull images on all nodes
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Synchronize kubernetes binaries
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on master
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Get kubernetes cluster status
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on worker
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC skipped: [kubesphere-worker-1]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Reconfigure CoreDNS
+00:10:32 UTC skipped: [kubesphere-master-1]
+00:10:32 UTC skipped: [kubesphere-master-2]
+00:10:32 UTC [ProgressiveUpgradeModule 2/2] Set current k8s version
+00:10:32 UTC skipped: [LocalHost]
+00:10:32 UTC [ChownModule] Chown user $HOME/.kube dir
+00:10:32 UTC success: [kubesphere-worker-1]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC success: [kubesphere-master-2]
+00:10:32 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC success: [kubesphere-master-2]
+00:10:32 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC success: [kubesphere-master-2]
+00:10:32 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:10:32 UTC success: [kubesphere-master-2]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:10:32 UTC success: [kubesphere-master-2]
+00:10:32 UTC success: [kubesphere-master-1]
+00:10:32 UTC Pipeline[UpgradeClusterPipeline] execute successfully
+00:15:22 UTC [GreetingsModule] Greetings
+00:15:22 UTC message: [kubesphere-worker-1]
+Greetings, KubeKey!
+00:15:22 UTC message: [kubesphere-master-1]
+Greetings, KubeKey!
+00:15:23 UTC message: [kubesphere-master-2]
+Greetings, KubeKey!
+00:15:23 UTC success: [kubesphere-worker-1]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC success: [kubesphere-master-2]
+00:15:23 UTC [NodePreCheckModule] A pre-check on nodes
+00:15:23 UTC success: [kubesphere-worker-1]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC success: [kubesphere-master-2]
+00:15:23 UTC [ClusterPreCheckModule] Get KubeConfig file
+00:15:23 UTC skipped: [kubesphere-master-2]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Get all nodes Kubernetes version
+00:15:23 UTC success: [kubesphere-worker-1]
+00:15:23 UTC success: [kubesphere-master-2]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Calculate min Kubernetes version
+00:15:23 UTC skipped: [kubesphere-master-2]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Check desired Kubernetes version
+00:15:23 UTC skipped: [kubesphere-master-2]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Check KubeSphere version
+00:15:23 UTC skipped: [kubesphere-master-2]
+00:15:23 UTC success: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Check dependency matrix for KubeSphere and Kubernetes
+00:15:23 UTC skipped: [kubesphere-master-2]
+00:15:23 UTC skipped: [kubesphere-master-1]
+00:15:23 UTC [ClusterPreCheckModule] Get kubernetes nodes status
+00:15:24 UTC skipped: [kubesphere-master-2]
+00:15:24 UTC success: [kubesphere-master-1]
+00:15:24 UTC [SetUpgradePlanModule 1/2] Set upgrade plan
+00:15:24 UTC success: [LocalHost]
+00:15:24 UTC [SetUpgradePlanModule 1/2] Generate kubeadm config
+00:15:24 UTC skipped: [kubesphere-master-2]
+00:15:24 UTC success: [kubesphere-master-1]
+00:15:24 UTC [ProgressiveUpgradeModule 1/2] Calculate next upgrade version
+00:15:24 UTC success: [LocalHost]
+00:15:24 UTC [ProgressiveUpgradeModule 1/2] Download installation binaries
+00:15:24 UTC message: [localhost]
+downloading amd64 kubeadm v1.24.1 ...
+00:15:24 UTC message: [localhost]
+kubeadm is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 kubelet v1.24.1 ...
+00:15:24 UTC message: [localhost]
+kubelet is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 kubectl v1.24.1 ...
+00:15:24 UTC message: [localhost]
+kubectl is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 helm v3.9.0 ...
+00:15:24 UTC message: [localhost]
+helm is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 kubecni v1.2.0 ...
+00:15:24 UTC message: [localhost]
+kubecni is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 crictl v1.24.0 ...
+00:15:24 UTC message: [localhost]
+crictl is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 etcd v3.4.13 ...
+00:15:24 UTC message: [localhost]
+etcd is existed
+00:15:24 UTC message: [localhost]
+downloading amd64 containerd 1.6.4 ...
+00:15:25 UTC message: [localhost]
+containerd is existed
+00:15:25 UTC message: [localhost]
+downloading amd64 runc v1.1.1 ...
+00:15:25 UTC message: [localhost]
+runc is existed
+00:15:25 UTC message: [localhost]
+downloading amd64 calicoctl v3.23.2 ...
+00:15:25 UTC message: [localhost]
+calicoctl is existed
+00:15:25 UTC success: [LocalHost]
+00:15:25 UTC [ProgressiveUpgradeModule 1/2] Start to pull images on all nodes
+00:15:25 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/pause:3.7
+00:15:25 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/pause:3.7
+00:15:25 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/pause:3.7
+00:15:29 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-apiserver:v1.24.1
+00:15:29 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:15:29 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-apiserver:v1.24.1
+00:15:30 UTC message: [kubesphere-worker-1]
+downloading image: coredns/coredns:1.8.6
+00:15:31 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-controller-manager:v1.24.1
+00:15:31 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-controller-manager:v1.24.1
+00:15:32 UTC message: [kubesphere-worker-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:15:32 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-scheduler:v1.24.1
+00:15:32 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-scheduler:v1.24.1
+00:15:34 UTC message: [kubesphere-worker-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:15:34 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:15:34 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/kube-proxy:v1.24.1
+00:15:35 UTC message: [kubesphere-worker-1]
+downloading image: calico/cni:v3.23.2
+00:15:35 UTC message: [kubesphere-master-2]
+downloading image: coredns/coredns:1.8.6
+00:15:35 UTC message: [kubesphere-master-1]
+downloading image: coredns/coredns:1.8.6
+00:15:37 UTC message: [kubesphere-worker-1]
+downloading image: calico/node:v3.23.2
+00:15:37 UTC message: [kubesphere-master-2]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:15:37 UTC message: [kubesphere-master-1]
+downloading image: kubesphere/k8s-dns-node-cache:1.15.12
+00:15:38 UTC message: [kubesphere-worker-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:15:38 UTC message: [kubesphere-master-2]
+downloading image: calico/kube-controllers:v3.23.2
+00:15:38 UTC message: [kubesphere-master-1]
+downloading image: calico/kube-controllers:v3.23.2
+00:15:40 UTC message: [kubesphere-master-2]
+downloading image: calico/cni:v3.23.2
+00:15:40 UTC message: [kubesphere-master-1]
+downloading image: calico/cni:v3.23.2
+00:15:41 UTC message: [kubesphere-master-2]
+downloading image: calico/node:v3.23.2
+00:15:41 UTC message: [kubesphere-master-1]
+downloading image: calico/node:v3.23.2
+00:15:43 UTC message: [kubesphere-master-2]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:15:43 UTC message: [kubesphere-master-1]
+downloading image: calico/pod2daemon-flexvol:v3.23.2
+00:15:45 UTC success: [kubesphere-worker-1]
+00:15:45 UTC success: [kubesphere-master-2]
+00:15:45 UTC success: [kubesphere-master-1]
+00:15:45 UTC [ProgressiveUpgradeModule 1/2] Synchronize kubernetes binaries
+00:15:49 UTC success: [kubesphere-master-2]
+00:15:49 UTC success: [kubesphere-worker-1]
+00:15:49 UTC success: [kubesphere-master-1]
+00:15:49 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on master
+00:18:54 UTC success: [kubesphere-master-1]
+00:18:54 UTC success: [kubesphere-master-2]
+00:18:54 UTC [ProgressiveUpgradeModule 1/2] Get kubernetes cluster status
+00:18:54 UTC stdout: [kubesphere-master-1]
+v1.24.1
+00:18:55 UTC stdout: [kubesphere-master-1]
+kubesphere-master-1   v1.24.1    [map[address:192.168.122.151 type:InternalIP] map[address:kubesphere-master-1 type:Hostname]]
+kubesphere-master-2   v1.24.1    [map[address:192.168.122.152 type:InternalIP] map[address:kubesphere-master-2 type:Hostname]]
+kubesphere-worker-1   v1.23.10   [map[address:192.168.122.181 type:InternalIP] map[address:kubesphere-worker-1 type:Hostname]]
+00:18:55 UTC stdout: [kubesphere-master-1]
+W0915 00:18:55.076684   12550 common.go:83] your configuration file uses a deprecated API spec: "kubeadm.k8s.io/v1beta2". Please use 'kubeadm config migrate --old-config old.yaml --new-config new.yaml', which will write the new, similar spec using a newer API version.
+W0915 00:18:55.077494   12550 common.go:83] your configuration file uses a deprecated API spec: "kubeadm.k8s.io/v1beta2". Please use 'kubeadm config migrate --old-config old.yaml --new-config new.yaml', which will write the new, similar spec using a newer API version.
+W0915 00:18:55.079381   12550 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[upload-certs] Storing the certificates in Secret "kubeadm-certs" in the "kube-system" Namespace
+[upload-certs] Using certificate key:
+d6ff8cef57d7f1c82cf8fd49f8c3d9268c37d869ed6715defcc26efdc4e33468
+00:18:55 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:18:55 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:18:55 UTC stdout: [kubesphere-master-1]
+secret/kubeadm-certs patched
+00:18:55 UTC stdout: [kubesphere-master-1]
+ngij79.t8oiirjswvc4wwbi
+00:18:55 UTC stdout: [kubesphere-master-2]
+v1.24.1
+00:18:55 UTC stdout: [kubesphere-master-2]
+kubesphere-master-1   v1.24.1    [map[address:192.168.122.151 type:InternalIP] map[address:kubesphere-master-1 type:Hostname]]
+kubesphere-master-2   v1.24.1    [map[address:192.168.122.152 type:InternalIP] map[address:kubesphere-master-2 type:Hostname]]
+kubesphere-worker-1   v1.23.10   [map[address:192.168.122.181 type:InternalIP] map[address:kubesphere-worker-1 type:Hostname]]
+00:18:55 UTC success: [kubesphere-master-1]
+00:18:55 UTC success: [kubesphere-master-2]
+00:18:55 UTC [ProgressiveUpgradeModule 1/2] Upgrade cluster on worker
+00:18:56 UTC stdout: [kubesphere-worker-1]
+[upgrade] Reading configuration from the cluster...
+[upgrade] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0915 00:18:55.499495    8544 utils.go:69] The recommended value for "clusterDNS" in "KubeletConfiguration" is: [10.233.0.10]; the provided value is: [169.254.25.10]
+[preflight] Running pre-flight checks
+[preflight] Skipping prepull. Not a control plane node.
+[upgrade] Skipping phase. Not a control plane node.
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[upgrade] The configuration for this node was successfully updated!
+[upgrade] Now you should go ahead and upgrade the kubelet package using your package manager.
+00:19:06 UTC skipped: [kubesphere-master-2]
+00:19:06 UTC success: [kubesphere-worker-1]
+00:19:06 UTC [ProgressiveUpgradeModule 1/2] Reconfigure CoreDNS
+00:19:06 UTC stdout: [kubesphere-master-1]
+deployment.apps/coredns patched (no change)
+00:19:06 UTC stdout: [kubesphere-master-1]
+service "kube-dns" deleted
+00:19:07 UTC stdout: [kubesphere-master-1]
+service/coredns unchanged
+Warning: resource clusterroles/system:coredns is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+clusterrole.rbac.authorization.k8s.io/system:coredns configured
+00:19:07 UTC stdout: [kubesphere-master-1]
+Error from server (NotFound): services "kube-dns" not found
+00:19:07 UTC stdout: [kubesphere-master-1]
+service/coredns unchanged
+clusterrole.rbac.authorization.k8s.io/system:coredns unchanged
+00:19:07 UTC stdout: [kubesphere-master-1]
+serviceaccount/nodelocaldns unchanged
+daemonset.apps/nodelocaldns unchanged
+00:19:07 UTC success: [kubesphere-master-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC [ProgressiveUpgradeModule 1/2] Set current k8s version
+00:19:07 UTC success: [LocalHost]
+00:19:07 UTC [SetUpgradePlanModule 2/2] Set upgrade plan
+00:19:07 UTC success: [LocalHost]
+00:19:07 UTC [SetUpgradePlanModule 2/2] Generate kubeadm config
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC success: [kubesphere-master-1]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Calculate next upgrade version
+00:19:07 UTC skipped: [LocalHost]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Download installation binaries
+00:19:07 UTC skipped: [LocalHost]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Start to pull images on all nodes
+00:19:07 UTC skipped: [kubesphere-worker-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC skipped: [kubesphere-master-1]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Synchronize kubernetes binaries
+00:19:07 UTC skipped: [kubesphere-worker-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC skipped: [kubesphere-master-1]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on master
+00:19:07 UTC skipped: [kubesphere-master-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Get kubernetes cluster status
+00:19:07 UTC skipped: [kubesphere-master-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Upgrade cluster on worker
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC skipped: [kubesphere-worker-1]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Reconfigure CoreDNS
+00:19:07 UTC skipped: [kubesphere-master-1]
+00:19:07 UTC skipped: [kubesphere-master-2]
+00:19:07 UTC [ProgressiveUpgradeModule 2/2] Set current k8s version
+00:19:07 UTC skipped: [LocalHost]
+00:19:07 UTC [ChownModule] Chown user $HOME/.kube dir
+00:19:07 UTC success: [kubesphere-worker-1]
+00:19:07 UTC success: [kubesphere-master-1]
+00:19:07 UTC success: [kubesphere-master-2]
+00:19:07 UTC [AutoRenewCertsModule] Generate k8s certs renew script
+00:19:07 UTC success: [kubesphere-master-2]
+00:19:07 UTC success: [kubesphere-master-1]
+00:19:07 UTC [AutoRenewCertsModule] Generate k8s certs renew service
+00:19:07 UTC success: [kubesphere-master-1]
+00:19:07 UTC success: [kubesphere-master-2]
+00:19:07 UTC [AutoRenewCertsModule] Generate k8s certs renew timer
+00:19:08 UTC success: [kubesphere-master-1]
+00:19:08 UTC success: [kubesphere-master-2]
+00:19:08 UTC [AutoRenewCertsModule] Enable k8s certs renew service
+00:19:08 UTC success: [kubesphere-master-2]
+00:19:08 UTC success: [kubesphere-master-1]
+00:19:08 UTC Pipeline[UpgradeClusterPipeline] execute successfully
