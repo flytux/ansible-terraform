@@ -48,7 +48,6 @@ terraform.rc
 *.key
 *.pub
 *.amd64
-kubeadm
 kubectl
 kubelet
 containerd

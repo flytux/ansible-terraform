@@ -44,14 +44,33 @@ resource "terraform_data" "copy_installer" {
 
   provisioner "remote-exec" {
     inline = [<<EOF
+
+      echo "192.168.122.51 docker.kw01" >> /etc/hosts
+
       dpkg -i kubeadm/packages/*.deb
+
+      cp kubeadm/packages/registry.* /usr/local/share/ca-certificates/
+      update-ca-certificates
+
+      mkdir -p /etc/containerd
+      cp kubeadm/packages/config.toml /etc/containerd/
+      mkdir -p /etc/nerdctl
+      cp kubeadm/bin/nerdctl.toml /etc/nerdctl/nerdctl.toml
+
+      systemctl restart containerd
+
       cp kubeadm/bin/* /usr/local/bin
       chmod +x /usr/local/bin/*
       cp -R kubeadm/cni /opt
+
+      nerdctl load -i kubeadm/kubeadm.tar
+
       cp kubeadm/kubelet.service /etc/systemd/system
       mv kubeadm/kubelet.service.d /etc/systemd/system
+
       systemctl daemon-reload
       systemctl enable kubelet --now
+
     EOF
     ]
   }
