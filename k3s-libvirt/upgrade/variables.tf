@@ -1,4 +1,4 @@
-variable "new_version" { default = "1.26.8" }
+variable "new_version" { default = "v1.27.5" }
 
 variable "prefixIP" { default = "192.168.100" }
 

@@ -36,20 +36,15 @@ resource "libvirt_domain" "k8s_nodes" {
   }
 
   provisioner "file" {
-    source      = "artifacts/kubesphere/kubekey/containerd"
-    destination = "/root/containerd"
-  }
-
-  provisioner "file" {
     source      = "artifacts/images/kubesphere-v1.23.10.tar"
-    destination = "/root/containerd/kubesphere-v1.23.10.tar"
+    destination = "/root/kubesphere-v1.23.10.tar"
   }
 
   provisioner "remote-exec" {
     inline = [<<EOF
-           chmod +x ./containerd/setup.sh
-           ./containerd/setup.sh
-      EOF
+      apt install socat conntrack containerd -y
+      ctr i import kubesphere-v1.23.10.tar
+    EOF
     ]
   }
 

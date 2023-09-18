@@ -12,6 +12,7 @@ data "template_file" "kubesphere-config" {
 }
 
 resource "terraform_data" "config-out" {
+  depends_on = [libvirt_domain.k8s_nodes]
   provisioner "local-exec" {
     command = <<-EOT
                  echo "${data.template_file.kubesphere-config.rendered}" |  sed '/^$/d' > artifacts/kubesphere/kubesphere-config.yml
@@ -20,13 +21,13 @@ resource "terraform_data" "config-out" {
 }
 
 resource "terraform_data" "install-kubesphere" {
-  depends_on = [libvirt_domain.k8s_nodes]
+  depends_on = [terraform_data.config-out]
 
   provisioner "local-exec" {
-    command = <<EOF
-      echo "Install kubesphere"
-      artifacts/kubesphere/kk create cluster -f artifacts/kubesphere/kubesphere-config.yml -y
-    EOF
+    command = <<-EOT
+                    artifacts/kubesphere/kk create cluster -f artifacts/kubesphere/kubesphere-config.yml -y
+                 EOT
   }
+
 
 }

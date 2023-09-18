@@ -2,7 +2,7 @@ variable "prefixIP" { default = "192.168.122" }
 
 variable "master_ip" { default = "192.168.122.11" }
 
-variable "new_version" { default = "v1.26.8" }
+variable "new_version" { default = "v1.27.6" }
 
 variable "kubeadm_nodes" { 
 

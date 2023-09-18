@@ -4,9 +4,9 @@ kind: JoinConfiguration
 discovery:
   bootstrapToken:
     apiServerEndpoint: lb.kubesphere.local:6443
-    token: "41olxs.su03adre21t04qn9"
+    token: "q3dqvk.642741hyp6nr81ap"
     unsafeSkipCAVerification: true
-  tlsBootstrapToken: "41olxs.su03adre21t04qn9"
+  tlsBootstrapToken: "q3dqvk.642741hyp6nr81ap"
 nodeRegistration:
   criSocket: unix:///run/containerd/containerd.sock
   kubeletExtraArgs:

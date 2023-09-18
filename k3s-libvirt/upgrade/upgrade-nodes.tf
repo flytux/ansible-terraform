@@ -22,6 +22,11 @@ resource "terraform_data" "upgrade-nodes" {
   destination = "/root/k3s/upgrade-nodes.sh"
   }
 
+  provisioner "file" {
+  source      = "k3s/${var.new_version}"
+  destination = "/root/k3s"
+  }
+
   provisioner "remote-exec" {
   inline = [<<EOF
       chmod +x ./k3s/upgrade-nodes.sh

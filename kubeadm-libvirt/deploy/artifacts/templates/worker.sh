@@ -1,4 +1,5 @@
 # 01 init node
+modprobe br_netfilter
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 
 chmod 400 $HOME/.ssh/id_rsa.key

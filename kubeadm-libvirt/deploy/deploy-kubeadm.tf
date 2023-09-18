@@ -34,7 +34,7 @@ resource "terraform_data" "copy_installer" {
 
   provisioner "file" {
     source      = "artifacts/kubeadm"
-    destination = "/root/kubeadm"
+    destination = "/root"
   }
 
   provisioner "file" {
@@ -44,12 +44,82 @@ resource "terraform_data" "copy_installer" {
 
   provisioner "remote-exec" {
     inline = [<<EOF
-           chmod +x ./kubeadm/setup-kubeadm.sh
-           sudo ./kubeadm/setup-kubeadm.sh
-           chmod +x ./kubeadm/deploy.sh
-           sudo ./kubeadm/deploy.sh
+      dpkg -i kubeadm/packages/*.deb
+      cp kubeadm/bin/* /usr/local/bin
+      chmod +x /usr/local/bin/*
+      cp -R kubeadm/cni /opt
+      cp kubeadm/kubelet.service /etc/systemd/system
+      mv kubeadm/kubelet.service.d /etc/systemd/system
+      systemctl daemon-reload
+      systemctl enable kubelet --now
     EOF
     ]
   }
 }
 
+resource "terraform_data" "init_master" {
+  depends_on = [terraform_data.copy_installer]
+
+  for_each =  {for key, val in var.kubeadm_nodes:
+               key => val if val.role == "master-init"}
+
+  connection {
+    type        = "ssh"
+    user        = "root"
+    private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
+    host        = "${var.prefixIP}.${each.value.octetIP}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [<<EOF
+           chmod +x ./kubeadm/master-init.sh
+           ./kubeadm/master-init.sh
+    EOF
+    ]
+  }
+}
+
+
+resource "terraform_data" "add_master" {
+  depends_on = [terraform_data.init_master]
+
+  for_each =  {for key, val in var.kubeadm_nodes:
+               key => val if val.role == "master-member"}
+
+  connection {
+    type        = "ssh"
+    user        = "root"
+    private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
+    host        = "${var.prefixIP}.${each.value.octetIP}"
+  }
+
+  provisioner "remote-exec" {
+  inline = [<<EOF
+           chmod +x ./kubeadm/master-member.sh
+           ./kubeadm/master-member.sh
+    EOF
+    ]
+  }
+}
+
+resource "terraform_data" "add_worker" {
+  depends_on = [terraform_data.init_master]
+
+  for_each =  {for key, val in var.kubeadm_nodes:
+               key => val if val.role == "worker"}
+
+  connection {
+    type        = "ssh"
+    user        = "root"
+    private_key = "${tls_private_key.generic-ssh-key.private_key_openssh}"
+    host        = "${var.prefixIP}.${each.value.octetIP}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [<<EOF
+           chmod +x ./kubeadm/worker.sh
+           ./kubeadm/worker.sh
+    EOF
+    ]
+  }
+}

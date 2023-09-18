@@ -33,12 +33,12 @@ resource "terraform_data" "prepare_upgrade" {
 
   provisioner "file" {
   source      = "artifacts/images/kubesphere-${var.upgrade_version}.tar"
-  destination = "/root/containerd/kubesphere-upgrade.tar"
+  destination = "/root/kubesphere-upgrade.tar"
   }
 
   provisioner "remote-exec" {
   inline = [<<EOF
-      nerdctl -n k8s.io load -i containerd/kubesphere-upgrade.tar
+      ctr i import kubesphere-upgrade.tar
     EOF
     ]
   }
