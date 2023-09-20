@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 ETCDCTL_PATH='/usr/local/bin/etcdctl'
-ENDPOINTS='https://192.168.122.151:2379'
+ENDPOINTS='https://192.168.100.151:2379'
 ETCD_DATA_DIR="/var/lib/etcd"
 BACKUP_DIR="/var/backups/kube_etcd/etcd-$(date +%Y-%m-%d-%H-%M-%S)"
 KEEPBACKUPNUMBER='6'

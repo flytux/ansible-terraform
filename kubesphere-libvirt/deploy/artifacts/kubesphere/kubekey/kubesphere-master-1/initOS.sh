@@ -168,10 +168,10 @@ sed -i '/^$/N;/\n$/N;//D' /etc/hosts
 
 cat >>/etc/hosts<<EOF
 # kubekey hosts BEGIN
-192.168.122.151  kubesphere-master-1.cluster.local kubesphere-master-1
-192.168.122.152  kubesphere-master-2.cluster.local kubesphere-master-2
-192.168.122.181  kubesphere-worker-1.cluster.local kubesphere-worker-1
-192.168.122.151  lb.kubesphere.local
+192.168.100.151  kubesphere-master-1.cluster.local kubesphere-master-1
+192.168.100.152  kubesphere-master-2.cluster.local kubesphere-master-2
+192.168.100.181  kubesphere-worker-1.cluster.local kubesphere-worker-1
+192.168.100.151  lb.kubesphere.local
 # kubekey hosts END
 EOF
 

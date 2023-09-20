@@ -4,14 +4,14 @@ kind: JoinConfiguration
 discovery:
   bootstrapToken:
     apiServerEndpoint: lb.kubesphere.local:6443
-    token: "q3dqvk.642741hyp6nr81ap"
+    token: "gwwys0.28i5sges2w25vtw0"
     unsafeSkipCAVerification: true
-  tlsBootstrapToken: "q3dqvk.642741hyp6nr81ap"
+  tlsBootstrapToken: "gwwys0.28i5sges2w25vtw0"
 controlPlane:
   localAPIEndpoint:
-    advertiseAddress: 192.168.122.152
+    advertiseAddress: 192.168.100.152
     bindPort: 6443
-  certificateKey: a1871c129c12114b11204154358524aa2d8092f896787c470b5a0cb7e5d8beb6
+  certificateKey: b68cf183865d2bbb88eae7f686d7d3c4dd1bdfee32c79ac299f96b57d93ddcf7
 nodeRegistration:
   criSocket: unix:///run/containerd/containerd.sock
   kubeletExtraArgs:
