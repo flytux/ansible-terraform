@@ -11,7 +11,8 @@ resource "libvirt_domain" "k3s_nodes" {
   disk { volume_id = libvirt_volume.os_images[each.key].id }
 
   network_interface {
-    network_name = "nat100"
+    network_name = "${var.network_name}"
+    addresses = [ "${var.prefixIP}.${each.value.octetIP}" ]
   }
 
   cloudinit = libvirt_cloudinit_disk.cloudinit_disks[each.key].id

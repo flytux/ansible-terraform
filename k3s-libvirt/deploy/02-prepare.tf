@@ -81,7 +81,6 @@ resource "libvirt_cloudinit_disk" "cloudinit_disks" {
   name           = "${each.key}-cloudinit.iso"
   pool           = var.diskPool
   user_data      = data.template_file.cloud_inits[each.key].rendered
-  network_config = data.template_file.network_configs[each.key].rendered
 }
 
 # Configure cloud-init 
@@ -96,22 +95,12 @@ data "template_file" "cloud_inits" {
   }
 }
 
-# Configure network
-data "template_file" "network_configs" {
-  for_each = var.k3s_nodes
-  template = file("${path.module}/artifacts/config/network_config_${var.ip_type}.cfg")
-  vars = {
-    domain   = var.dns_domain
-    prefixIP = var.prefixIP
-    octetIP  = each.value.octetIP
-  }
-}
 
 resource "libvirt_network" "nat" {
 
-  name = "nat100"
+  name = "${var.network_name}"
   mode = "nat"
-  addresses = [ "192.168.100.0/24" ]
+  addresses = [ "${var.prefixIP}.0/24" ]
 
   domain = "kw01"
   dns {
