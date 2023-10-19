@@ -33,6 +33,7 @@ data "template_file" "master-init" {
   template = file("artifacts/templates/master-init.sh")
   vars = {
     token     = random_string.token.result
+    k3s_version = var.k3s_version
   }
 }
 
@@ -41,6 +42,7 @@ data "template_file" "master-member" {
   vars = {
     token     = random_string.token.result
     master_ip = var.master_ip
+    k3s_version = var.k3s_version
   }
 }
 
@@ -49,6 +51,7 @@ data "template_file" "worker" {
   vars = {
     token     = random_string.token.result
     master_ip = var.master_ip
+    k3s_version = var.k3s_version
   }
 }
 
@@ -59,7 +62,7 @@ resource "libvirt_volume" "os_images" {
   for_each = var.k3s_nodes
   name   = "${each.key}.qcow2"
   pool   = var.diskPool
-  source = "artifacts/images/focal-server-cloudimg-amd64.img"
+  source = "/root/works/cloud-images/focal-server-cloudimg-amd64-disk-kvm.img"
   format = "qcow2"
 
 # Extend libvirt primary volume

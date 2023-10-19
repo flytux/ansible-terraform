@@ -12,6 +12,7 @@ variable "diskPool" { default = "default" }
 
 variable "qemu_connect" { default = "qemu:///system" }
 
+variable "k3s_version" { default = "v1.26.8" }
 
 variable "k3s_nodes" { 
 

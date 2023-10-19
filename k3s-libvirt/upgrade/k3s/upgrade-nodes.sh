@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "${0%/*}"
-NEW_VERSION=v1.27.5
+NEW_VERSION=v1.27.6
 OLD_VERSION=$(/usr/local/bin/k3s --version | grep -oP 'v[1-9][^\s]+')
 
 HOSTNAME=$(hostname)
