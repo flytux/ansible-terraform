@@ -62,7 +62,7 @@ resource "libvirt_volume" "os_images" {
   for_each = var.k3s_nodes
   name   = "${each.key}.qcow2"
   pool   = var.diskPool
-  source = "/root/works/cloud-images/focal-server-cloudimg-amd64-disk-kvm.img"
+  source = "images/ubuntu-20.04-server-cloudimg-amd64.img"
   format = "qcow2"
 
 # Extend libvirt primary volume
