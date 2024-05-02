@@ -1,8 +1,8 @@
 #!/bin/sh
 PATH=$PATH:/usr/local/bin
 
-NEW_VERSION=v1.28.8
-MASTER_IP=192.168.122.21
+NEW_VERSION=v1.28.9
+MASTER_IP=192.168.122.11
 HOST_IP=$(hostname -I | awk '{print $1}')
 OLD_VERSION=$(/usr/local/bin/kubeadm version | grep -oE 'v([1-9]|\.)+')
 

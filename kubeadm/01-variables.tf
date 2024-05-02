@@ -1,18 +1,16 @@
-variable "kube_version" {default = "v1.27.12" }
-variable "prefix_ip" { default = "192.168.122" }
+variable "kube_version" {default = "v1.28.8" }
 
-variable "master_ip" { default = "192.168.122.21" }
+variable "ssh_key" {default = "../kvm/.ssh-default/id_rsa.key"}
 
-variable "join_cmd" { default = "$(ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- cat join_cmd)" }
+variable "master_ip" { default = "192.168.122.11" }
 
 variable "kubeadm_home" { default = "artifacts/kubeadm" }
 
 variable "kubeadm_nodes" { 
 
-  type = map(object({ role = string, octetIP = string }))
+  type = map(object({ role = string, ip = string }))
   default = { 
-              kb-master-1 = { role = "master-init", octetIP = "21" },
-              kb-worker-1 = { role = "worker", octetIP = "22" },
-              kb-worker-2 = { role = "worker", octetIP = "23" },
+              kb-master-1 = { role = "master-init", ip = "192.168.122.11" },
+              kb-worker-1 = { role = "worker", ip = "192.168.122.21" },
   }
 }

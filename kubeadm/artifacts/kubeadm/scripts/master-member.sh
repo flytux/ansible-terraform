@@ -5,9 +5,9 @@ chmod 400 $HOME/.ssh/id_rsa.key
 
 dnf install -y socat conntrack
 
-until [ $(ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- cat join_cmd | wc -l) != 0 ];
+until [ $(ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.11 -- cat join_cmd | wc -l) != 0 ];
 do
         echo "Wait Master Node Init.."
 	sleep 10
 done
-        ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- cat join_cmd | sh -
+        ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.11 -- cat join_cmd | sh -

@@ -15,8 +15,8 @@ resource "terraform_data" "upgrade_master_init" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = file("/root/works/kvm/.ssh-default/id_rsa.key")
-    host        = "${var.prefixIP}.${each.value.octetIP}"
+    private_key = file("${var.ssh_key}")
+    host        = "${each.value.ip}"
   }
 
   provisioner "file" {
@@ -48,8 +48,8 @@ resource "terraform_data" "upgrade_master_member" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = file("/root/works/kvm/.ssh-default/id_rsa.key")
-    host        = "${var.prefixIP}.${each.value.octetIP}"
+    private_key = file("${var.ssh_key}")
+    host        = "${each.value.ip}"
   }
 
   provisioner "file" {
@@ -89,8 +89,8 @@ resource "terraform_data" "upgrade-worker" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = file("/root/works/kvm/.ssh-default/id_rsa.key")
-    host        = "${var.prefixIP}.${each.value.octetIP}"
+    private_key = file("${var.ssh_key}")
+    host        = "${each.value.ip}"
   }
 
   provisioner "file" {

@@ -3,7 +3,7 @@ modprobe br_netfilter
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 
 PATH=/usr/local/bin:$PATH
-kubeadm init --pod-network-cidr=192.168.0.0/16 --upload-certs --control-plane-endpoint=192.168.122.21:6443 --kubernetes-version v1.27.12 | \
+kubeadm init --pod-network-cidr=192.168.0.0/16 --upload-certs --control-plane-endpoint=192.168.122.11:6443 --kubernetes-version v1.28.8 | \
 sed -e '/kubeadm join/,/--certificate-key/!d' | head -n 3 > join_cmd
 # 02 copy kubeconfig
 mkdir -p $HOME/.kube

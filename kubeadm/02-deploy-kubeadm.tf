@@ -33,10 +33,10 @@ resource "terraform_data" "copy_installer" {
   depends_on = [local_file.worker]
   for_each = var.kubeadm_nodes
   connection {
-    host        = "${var.prefix_ip}.${each.value.octetIP}"
+    host        = "${each.value.ip}"
     user        = "root"
     type        = "ssh"
-    private_key = "${file("/root/works/kvm/.ssh-default/id_rsa.key")}"
+    private_key = "${file("${var.ssh_key}")}"
     timeout     = "2m"
   }
 
@@ -46,7 +46,7 @@ resource "terraform_data" "copy_installer" {
   }
 
   provisioner "file" {
-    source      = "/root/works/kvm/.ssh-default/id_rsa.key"
+    source      = "${var.ssh_key}"
     destination = "/root/.ssh/id_rsa.key"
   }
 
@@ -70,8 +70,8 @@ resource "terraform_data" "init_master" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = "${file("/root/works/kvm/.ssh-default/id_rsa.key")}"
-    host        = "${var.prefix_ip}.${each.value.octetIP}"
+    private_key = "${file("${var.ssh_key}")}"
+    host        = "${each.value.ip}"
   }
 
   provisioner "remote-exec" {
@@ -95,8 +95,8 @@ resource "terraform_data" "add_master" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = "${file("/root/works/kvm/.ssh-default/id_rsa.key")}"
-    host        = "${var.prefix_ip}.${each.value.octetIP}"
+    private_key = "${file("${var.ssh_key}")}"
+    host        = "${each.value.ip}"
   }
 
   provisioner "remote-exec" {
@@ -119,8 +119,8 @@ resource "terraform_data" "add_worker" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = "${file("/root/works/kvm/.ssh-default/id_rsa.key")}"
-    host        = "${var.prefix_ip}.${each.value.octetIP}"
+    private_key = "${file("${var.ssh_key}")}"
+    host        = "${each.value.ip}"
   }
 
   provisioner "remote-exec" {
