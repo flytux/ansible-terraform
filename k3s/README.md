@@ -1,10 +1,5 @@
 # Libvirt 업데이트 
 
-- 우분투의 경우 잘 생성되나, Centos / Rocky 등을 고정 IP로 생성하는 경우,
-- Libvirt 네트워크 모듈을 Cloud Init Disk에 설정하지 않고
-- Domiain 네트워크 항목에 직접 고정 IP를 설정하여 주어야 함
-
-
 ```bash
   network_interface {
     network_name = "${var.network_name}"
