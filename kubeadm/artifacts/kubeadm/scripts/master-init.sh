@@ -13,3 +13,4 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 # 03 install cni
 #kubectl create -f kubeadm/cni/calico.yaml
 cilium install --version 1.15.3
+helm upgrade -i cilium ./kubeadm/cni/cilium-1.15.5.tgz -n kube-system

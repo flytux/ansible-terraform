@@ -1,13 +1,17 @@
 #!/bin/sh
 
+# Rocky
 # Disble SELINUX 
-setenforce 0
-sed -i --follow-symlinks 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
-
-dnf install -y dnf-utils
-dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-dnf install -y containerd.io socat conntrack iproute-tc iptables-ebtables iptables
+#setenforce 0
+#sed -i --follow-symlinks 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+#
+#dnf install -y dnf-utils
+#dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#dnf install -y containerd.io socat conntrack iproute-tc iptables-ebtables iptables
 #dnf install -y kubeadm/packages/*.rpm
+
+# Ubuntu
+dpkg -i kubeadm/packages/*.deb
 
 # Install containerd
 mkdir -p /etc/containerd
