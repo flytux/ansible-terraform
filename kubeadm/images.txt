@@ -1,0 +1,9 @@
+REPOSITORY               TAG                    IMAGE ID        CREATED        PLATFORM       SIZE         BLOB SIZE
+bitnami/bitnami-shell    11-debian-11-r130      98bba13bc2de    7 days ago     linux/amd64    92.3 MiB     32.3 MiB
+bitnami/rabbitmq         3.12.1-debian-11-r0    5ae7cfefc18f    7 days ago     linux/amd64    224.9 MiB    98.4 MiB
+adoptopenjdk             8-jre                  bf736024c659    3 days ago     linux/amd64    229.7 MiB    82.3 MiB
+haproxy                  2.3                    078319f4e37b    13 days ago    linux/amd64    106.0 MiB    36.7 MiB
+maven                    3.3-jdk-8              18e8bd367c73    10 days ago    linux/amd64    672.2 MiB    240.8 MiB
+nginx                    latest                 a484819eb602    13 days ago    linux/amd64    192.8 MiB    67.7 MiB
+neuvector/updater        latest                 fdac423c6155    7 days ago     linux/amd64    14.0 MiB     5.9 MiB
+sonatype/nexus3          3.68.1                 d4c592b2c1ca    7 days ago     linux/amd64    559.9 MiB    326.2 MiB

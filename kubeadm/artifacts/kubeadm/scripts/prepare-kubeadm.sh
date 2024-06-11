@@ -10,7 +10,8 @@
 #dnf install -y containerd.io socat conntrack iproute-tc iptables-ebtables iptables
 #dnf install -y kubeadm/packages/*.rpm
 
-apt install -y kubeadm/packages/*.deb
+# Ubuntu
+dpkg -i kubeadm/packages/*.deb
 
 # Install containerd
 mkdir -p /etc/containerd
