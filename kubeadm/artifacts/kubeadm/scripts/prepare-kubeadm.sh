@@ -11,7 +11,7 @@
 #dnf install -y kubeadm/packages/*.rpm
 
 # Ubuntu
-echo "192.168.122.21    k8smaster" >> /etc/hosts
+echo "192.168.122.11    k8smaster" >> /etc/hosts
 
 dpkg -i kubeadm/packages/*.deb
 

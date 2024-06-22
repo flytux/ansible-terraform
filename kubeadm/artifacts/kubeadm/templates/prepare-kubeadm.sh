@@ -11,13 +11,20 @@
 #dnf install -y kubeadm/packages/*.rpm
 
 # Ubuntu
+# Add k8smaster IP
 echo "${master_ip}    ${master_hostname}" >> /etc/hosts
 
+# Swap off
+swapoff -a                 
+sed -e '/swap/ s/^#*/#/' -i /etc/fstab  
+
+# Install containred
 dpkg -i kubeadm/packages/*.deb
 
-# Install containerd
+# Config containerd
 mkdir -p /etc/containerd
 cp kubeadm/packages/config.toml /etc/containerd/
+
 mkdir -p /etc/nerdctl
 cp kubeadm/kubernetes/config/nerdctl.toml /etc/nerdctl/nerdctl.toml
 
