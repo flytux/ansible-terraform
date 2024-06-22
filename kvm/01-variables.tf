@@ -18,8 +18,8 @@ variable "cloud_image" { default = "ubuntu-22.04-server-cloudimg-amd64.img" }
 variable "nodes" { 
          type = map(object({ role = string, octetIP = string , vcpu = number, memoryMB = number, incGB = number})) 
          default = {
-           master-01 = { role = "master",  octetIP = "11" , vcpu = 4, memoryMB = 1024 * 8,  incGB = 200},
-           worker-01 = { role = "worker",  octetIP = "21" , vcpu = 4, memoryMB = 1024 * 10,  incGB = 100},
-           worker-02 = { role = "worker",  octetIP = "22" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
+          node-01 = { role = "m1",  octetIP = "11" , vcpu = 2, memoryMB = 1024 * 8, incGB = 100},
+          node-02 = { role = "w1",  octetIP = "12" , vcpu = 5, memoryMB = 1024 * 10,incGB = 100},
+          node-03 = { role = "w2",  octetIP = "13" , vcpu = 5, memoryMB = 1024 * 10,incGB = 100},
   }
 }

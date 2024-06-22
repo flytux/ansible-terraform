@@ -14,8 +14,8 @@ variable "kubeadm_nodes" {
 
   type = map(object({ role = string, ip = string }))
   default = { 
-              master1  = { role = "master-init", ip = "192.168.122.11" },
-              worker1  = { role = "worker",      ip = "192.168.122.12" },
-              worker2  = { role = "worker",      ip = "192.168.122.13" },
+    #master1  = { role = "master-init", ip = "192.168.122.11" },
+    #worker1  = { role = "worker",      ip = "192.168.122.12" },
+    worker2  = { role = "worker",      ip = "192.168.122.13" },
   }
 }
