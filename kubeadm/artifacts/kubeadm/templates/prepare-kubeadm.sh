@@ -11,6 +11,8 @@
 #dnf install -y kubeadm/packages/*.rpm
 
 # Ubuntu
+echo "${master_ip}    ${master_hostname}" >> /etc/hosts
+
 dpkg -i kubeadm/packages/*.deb
 
 # Install containerd

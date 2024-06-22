@@ -6,13 +6,13 @@ chmod 400 $HOME/.ssh/id_rsa.key
 
 dnf install -y socat conntrack
 
-until [ $(ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.11 -- cat join_cmd | wc -l) != 0 ];
+until [ $(ssh -i /root/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- cat join_cmd | wc -l) != 0 ];
 do
         echo "Wait Master Node Init.."
 	sleep 10
 done
-        ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.11 -- kubeadm token create --print-join-command | sh -
+        ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- kubeadm token create --print-join-command | sh -
 
 mkdir -p $HOME/.kube
-ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.11 -- cat /etc/kubernetes/admin.conf > $HOME/.kube/config
+ssh -i $HOME/.ssh/id_rsa.key -o StrictHostKeyChecking=no 192.168.122.21 -- cat /etc/kubernetes/admin.conf > $HOME/.kube/config
 sed -i "s/127\.0\.0\.1/{master_ip}/g" $HOME/.kube/config

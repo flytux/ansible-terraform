@@ -1,5 +1,7 @@
 resource "local_file" "prepare_kubeadm" {
     content     = templatefile("${path.module}/${var.kubeadm_home}/templates/prepare-kubeadm.sh", {
+                   master_ip = var.master_ip,
+                   master_hostname = var.master_hostname
                    })
     filename = "${path.module}/${var.kubeadm_home}/scripts/prepare-kubeadm.sh"
 }
@@ -7,7 +9,8 @@ resource "local_file" "prepare_kubeadm" {
 resource "local_file" "master_init" {
   depends_on = [local_file.prepare_kubeadm]
     content     = templatefile("${path.module}/${var.kubeadm_home}/templates/master-init.sh", {
-                    master_ip = var.master_ip,
+                    master_hostname = var.master_hostname,
+                    pod_cidr = var.pod_cidr
                     kube_version = var.kube_version
                    })
     filename = "${path.module}/${var.kubeadm_home}/scripts/master-init.sh"
