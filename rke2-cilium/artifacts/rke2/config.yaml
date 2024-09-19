@@ -1,0 +1,5 @@
+token: 98ZwKz6uS28E2HilHXRoCrgdlWOFrI5zHvjeBY6PX3Bs1osatZQMnpM6dis7OqMAqsIuycROshBvZllc2Dbcdkh36bpDx3oXPw2mhxjIGRFI
+tls-san:
+  - rke2-master
+cni: none
+disable: rke2-ingress-nginx

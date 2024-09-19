@@ -53,3 +53,4 @@ kubelet
 containerd
 *.pem
 *.qcow2
+terraform.tfstate*

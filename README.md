@@ -21,12 +21,9 @@
 
 ---
     
-- Kubesphere with libvirt provisioner (23.09.14)
-  - Multi master / worker node provsioning
-  - Added node role all (master + worker)
-  - Socat / conntrack deb package installed from package file to execture remnotely
-  - Terraform null_resource => terraform_data changed
-  - Using templatefile to generate dynamic kubesphere config
-  - VM information moved to variables from local data
-
+- RKE2 with cilium cni
+  - rke2-cilium
+  - Instasll multi master cluster with RKE2
+  - Install ciliume with ingress controller, load balancer
+  
 ---
