@@ -2,16 +2,14 @@
 
 # Rocky
 # Disble SELINUX 
-#setenforce 0
-#sed -i --follow-symlinks 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
 #
-#dnf install -y dnf-utils
-#dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-#dnf install -y containerd.io socat conntrack iproute-tc iptables-ebtables iptables
-#dnf install -y kubeadm/packages/*.rpm
+dnf install -y dnf-utils
+dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install -y containerd.io socat conntrack iproute-tc iptables-ebtables iptables
 
-# Ubuntu
-# Add k8smaster IP
+#Add k8smaster IP
 echo "${master_ip}    ${master_hostname}" >> /etc/hosts
 
 # Swap off
@@ -19,7 +17,7 @@ swapoff -a
 sed -e '/swap/ s/^#*/#/' -i /etc/fstab  
 
 # Install containred
-dpkg -i kubeadm/packages/*.deb
+#dpkg -i kubeadm/packages/*.deb
 
 # Config containerd
 mkdir -p /etc/containerd

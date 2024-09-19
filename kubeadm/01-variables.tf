@@ -1,4 +1,4 @@
-variable "kube_version" {default = "v1.28.8" }
+variable "kube_version" {default = "v1.29.6" }
 
 variable "ssh_key" {default = "../kvm/.ssh-default/id_rsa.key"}
 
@@ -14,8 +14,8 @@ variable "kubeadm_nodes" {
 
   type = map(object({ role = string, ip = string }))
   default = { 
-    #master1  = { role = "master-init", ip = "192.168.122.11" },
-    #worker1  = { role = "worker",      ip = "192.168.122.12" },
-    worker2  = { role = "worker",      ip = "192.168.122.13" },
+    master1  = { role = "master-init",  ip = "192.168.122.11" },
+    #master2  = { role = "master-member",ip = "192.168.122.12" },
+    #worker2  = { role = "worker",       ip = "192.168.122.13" },
   }
 }

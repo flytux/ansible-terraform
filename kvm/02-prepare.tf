@@ -31,12 +31,22 @@ data "template_file" "cloud_inits" {
   }
 }
 
+#data "template_file" "network_configs" {
+#  for_each = var.nodes
+#  template = file("${path.module}/artifacts/config/network_config_static.cfg")
+#  vars = {
+#    dns_domain = var.dns_domain
+#    prefixIP   = var.prefixIP
+#    octetIP    = "${each.value.octetIP}"
+#  }
+#}
+
 # OS images for libvirt VMs
 resource "libvirt_volume" "os_images" {
   for_each = var.nodes
   name   = "${each.key}.qcow2"
   pool   = var.diskPool
-  source = "artifacts/images/${var.cloud_image}"
+  source = "/root/works/cloud-images/${var.cloud_image}"
   format = "qcow2"
 
 # Extend libvirt primary volume
@@ -72,6 +82,8 @@ resource "libvirt_network" "nat" {
     enabled = true
     local_only = true
   }
-  dhcp { enabled = false }
+  dhcp { 
+    enabled = false 
+  }
   autostart = true
 }
