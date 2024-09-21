@@ -39,7 +39,8 @@ chmod +x /opt/cni/bin/*
 
 # Configure and start kubelet
 cp kubeadm/kubernetes/config/kubelet.service /etc/systemd/system
-mv kubeadm/kubernetes/config/kubelet.service.d /etc/systemd/system
+mkdir -p /etc/systemd/system/kubelet.service.d
+\cp -f kubeadm/kubernetes/config/kubelet.service.d/10-kubeadm.conf /etc/systemd/system/kubelet.service.d
 
 systemctl daemon-reload
 systemctl enable kubelet --now
