@@ -57,47 +57,47 @@ kubectl rollout restart deploy coredns -n kube-system
 
 echo "==== 3) Prepare Gitlab Runner  ===="
 
-openssl s_client -showcerts -connect gitlab.amc.seoul.kr:443 -servername gitlab.amc.seoul.kr < /dev/null 2>/dev/null | openssl x509 -outform PEM > gitlab.amc.seoul.kr.crt
-
-kubectl create secret generic gitlab-runner-tls --from-file=gitlab.amc.seoul.kr.crt  -n gitlab
-
-cat << EOF > gitlab-runner-values.yaml
-gitlabUrl: https://gitlab.amc.seoul.kr
-
-runnerToken: glrt-vZuAwYks8JRqx5GULT-f
-rbac:
-  create: true
-
-certsSecretName: gitlab-runner-tls 
-
-runners:
-  config: |
-    [[runners]]
-      [runners.kubernetes]
-        namespace = "{{.Release.Namespace}}"
-        image = "ubuntu:20.04"
-    [[runners.kubernetes.volumes.pvc]]
-      mount_path = "/cache/maven.repository"
-      name = "gitlab-runner-cache-pvc"
-EOF
-
-kubectl -n gitlab apply -f - <<"EOF"
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: gitlab-runner-cache-pvc
-  namespace: gitlab
-spec:
-  storageClassName: nfs-csi
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-EOF
-
-echo "==== 4) Import Repository and Install runner  ===="
-
+#openssl s_client -showcerts -connect gitlab.amc.seoul.kr:443 -servername gitlab.amc.seoul.kr < /dev/null 2>/dev/null | openssl x509 -outform PEM > gitlab.amc.seoul.kr.crt
+#
+#kubectl create secret generic gitlab-runner-tls --from-file=gitlab.amc.seoul.kr.crt  -n gitlab
+#
+#cat << EOF > gitlab-runner-values.yaml
+#gitlabUrl: https://gitlab.amc.seoul.kr
+#
+#runnerToken: glrt-vZuAwYks8JRqx5GULT-f
+#rbac:
+#  create: true
+#
+#certsSecretName: gitlab-runner-tls 
+#
+#runners:
+#  config: |
+#    [[runners]]
+#      [runners.kubernetes]
+#        namespace = "{{.Release.Namespace}}"
+#        image = "ubuntu:20.04"
+#    [[runners.kubernetes.volumes.pvc]]
+#      mount_path = "/cache/maven.repository"
+#      name = "gitlab-runner-cache-pvc"
+#EOF
+#
+#kubectl -n gitlab apply -f - <<"EOF"
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: gitlab-runner-cache-pvc
+#  namespace: gitlab
+#spec:
+#  storageClassName: nfs-csi
+#  accessModes:
+#  - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 1Gi
+#EOF
+#
+#echo "==== 4) Import Repository and Install runner  ===="
+#
 #helm upgrade -i gitlab-runner gitlab/gitlab-runner -f gitlab-runner-values.yaml -n gitlab
 
 echo "==== Create user argo / abcd!234  ===="
