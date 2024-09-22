@@ -18,13 +18,13 @@ expose:
       secretName: "harbor-ingress-tls"
   ingress:
     hosts:
-      core: harbor.${domain_name}
-externalURL: https://harbor.${domain_name}
+      core: harbor.amc.seoul.kr
+externalURL: https://harbor.amc.seoul.kr
 EOF
 
 helm upgrade -i harbor harbor/harbor --wait -n harbor -f harbor.yaml
 
-nerdctl login harbor.${domain_name} -u admin -p Harbor12345
+nerdctl login harbor.amc.seoul.kr -u admin -p Harbor12345
 
 
 echo "==== 2) Install Gitlab ===="
@@ -51,7 +51,7 @@ kubectl create secret tls gitlab-ingress-tls --key artifacts/gitlab.key --cert a
 
 kubectl patch ingress gitlab-webservice-default -n gitlab --type='json' -p='[{"op" : "replace" ,"path" : "/spec/tls/0/secretName" ,"value" : "gitlab-ingress-tls"}]'
 
-kubectl get cm coredns -n kube-system -o yaml | sed 's/ready/ready\n        hosts {\n          ${ingress_ip} gitlab.${domain_name}\n          fallthrough\n        }/' | kubectl replace -f -
+kubectl get cm coredns -n kube-system -o yaml | sed 's/ready/ready\n        hosts {\n          192.168.100.1 gitlab.amc.seoul.kr\n          fallthrough\n        }/' | kubectl replace -f -
 
 kubectl rollout restart deploy coredns -n kube-system
 
@@ -62,7 +62,7 @@ openssl s_client -showcerts -connect gitlab.amc.seoul.kr:443 -servername gitlab.
 kubectl create secret generic gitlab-runner-tls --from-file=gitlab.amc.seoul.kr.crt  -n gitlab
 
 cat << EOF > gitlab-runner-values.yaml
-gitlabUrl: https://gitlab.${domain_name}
+gitlabUrl: https://gitlab.amc.seoul.kr
 
 runnerToken: glrt-vZuAwYks8JRqx5GULT-f
 rbac:
@@ -125,13 +125,13 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`argocd.${domain_name}`)
+      match: Host(`argocd.amc.seoul.kr`)
       priority: 10
       services:
         - name: argocd-server
           port: 80
     - kind: Rule
-      match: Host(`argocd.${domain_name}`) && Headers(`Content-Type`, `application/grpc`)
+      match: Host(`argocd.amc.seoul.kr`) && Headers(`Content-Type`, `application/grpc`)
       priority: 11
       services:
         - name: argocd-server
@@ -162,7 +162,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 #    server: 'https://kubernetes.default.svc'
 #  source:
 #    path: .
-#    repoURL: 'https://gitlab.${domain_name}/argo/kw-mvn-deploy.git'
+#    repoURL: 'https://gitlab.amc.seoul.kr/argo/kw-mvn-deploy.git'
 #    targetRevision: main
 #  sources: []
 #  project: default
@@ -171,80 +171,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 #      - CreateNamespace=true
 #EOF
 #
-#Kiali 
+# Kiali 
 #
-#rancher-monitoring:104.0.0+up45.31.1
-#while :; do curl -s 192.168.122.11:31380/productpage | grep -o "<title>.*</title>"; sleep 0.1; done
-#
-#Logging
-#
-#helm repo add grafana https://grafana.github.io/helm-charts
-#
-#helm repo add kube-logging https://kube-logging.github.io/helm-charts
-#
-#helm upgrade --install --wait --create-namespace --namespace logging logging-operator kube-logging/logging-operator
-#
-#helm fetch grafana/loki --version 2.9.1
-#
-#tar xvf loki-2.9.1.tgz
-#
-#rm loki/templates/podsecuritypolicy.yaml
-#
-#helm upgrade -i loki loki -n logging
-#
-#kubectl -n logging apply -f - <<"EOF"
-#apiVersion: logging.banzaicloud.io/v1beta1
-#kind: Output
-#metadata:
-# name: loki-output
-#spec:
-# loki:
-#   url: http://loki:3100
-#   configure_kubernetes_labels: true
-#   buffer:
-#     timekey: 1m
-#     timekey_wait: 30s
-#     timekey_use_utc: true
-#EOF
-#
-#kubectl -n logging apply -f - <<"EOF"
-#apiVersion: logging.banzaicloud.io/v1beta1
-#kind: Flow
-#metadata:
-#  name: loki-flow
-#spec:
-#  filters:
-#    - tag_normaliser: {}
-#    - parser:
-#        remove_key_name_field: true
-#        reserve_data: true
-#        parse:
-#          type: nginx
-#  match:
-#    - select:
-#        labels:
-#          app.kubernetes.io/name: log-generator
-#  localOutputRefs:
-#    - loki-output
-#EOF
-#
-#kubectl -n logging apply -f - <<"EOF"
-#apiVersion: logging.banzaicloud.io/v1beta1
-#kind: Logging
-#metadata:
-#  name: default-logging-simple
-#spec:
-#  fluentd:
-#    logLevel: debug
-#  fluentbit: {}
-#  controlNamespace: logging
-#EOF
-#
-#helm upgrade --install --wait --create-namespace --namespace logging log-generator kube-logging/log-generator
-#
-#
-#
-#kubectl get secret -n logging default-logging-simple-fluentd-app -o jsonpath='{.data.fluentd\.conf}' | base64 -d
-#
-#Add Grafana Loki Datasource and Explore log
-#
+# rancher-monitoring 104.0.0+up45.31.1
+# while :; do curl -s 192.168.122.11:31380/productpage | grep -o "<title>.*</title>"; sleep 0.1; done

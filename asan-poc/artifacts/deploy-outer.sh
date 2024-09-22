@@ -19,7 +19,7 @@ helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
 
 helm repo update
 
-helm upgrade -i rancher rancher-latest/rancher --version 2.8.9\
+helm upgrade -i rancher rancher-latest/rancher \
 --set hostname=rancher.amc.seoul.kr --set bootstrapPassword=admin \
 --set replicas=1 --set global.cattle.psp.enabled=false \
 --set auditLog.level=1 \
