@@ -98,6 +98,7 @@ EOF
 
 echo "==== 4) Import Repository and Install runner  ===="
 
+#helm upgrade -i gitlab-runner gitlab/gitlab-runner -f gitlab-runner-values.yaml -n gitlab
 
 echo "==== Create user argo / abcd!234  ===="
 echo "==== Admin > Setting >  General > Import and Export > Repository by URL  ===="
@@ -171,7 +172,80 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 #      - CreateNamespace=true
 #EOF
 #
-# Kiali 
+#Kiali 
 #
-# rancher-monitoring 104.0.0+up45.31.1
-# while :; do curl -s 192.168.122.11:31380/productpage | grep -o "<title>.*</title>"; sleep 0.1; done
+#rancher-monitoring:104.0.0+up45.31.1
+#while :; do curl -s 192.168.122.11:31380/productpage | grep -o "<title>.*</title>"; sleep 0.1; done
+#
+#Logging
+#
+#helm repo add grafana https://grafana.github.io/helm-charts
+#
+#helm repo add kube-logging https://kube-logging.github.io/helm-charts
+#
+#helm upgrade --install --wait --create-namespace --namespace logging logging-operator kube-logging/logging-operator
+#
+#helm fetch grafana/loki --version 2.9.1
+#
+#tar xvf loki-2.9.1.tgz
+#
+#rm loki/templates/podsecuritypolicy.yaml
+#
+#helm upgrade -i loki loki -n logging
+#
+#kubectl -n logging apply -f - <<"EOF"
+#apiVersion: logging.banzaicloud.io/v1beta1
+#kind: Output
+#metadata:
+# name: loki-output
+#spec:
+# loki:
+#   url: http://loki:3100
+#   configure_kubernetes_labels: true
+#   buffer:
+#     timekey: 1m
+#     timekey_wait: 30s
+#     timekey_use_utc: true
+#EOF
+#
+#kubectl -n logging apply -f - <<"EOF"
+#apiVersion: logging.banzaicloud.io/v1beta1
+#kind: Flow
+#metadata:
+#  name: loki-flow
+#spec:
+#  filters:
+#    - tag_normaliser: {}
+#    - parser:
+#        remove_key_name_field: true
+#        reserve_data: true
+#        parse:
+#          type: nginx
+#  match:
+#    - select:
+#        labels:
+#          app.kubernetes.io/name: log-generator
+#  localOutputRefs:
+#    - loki-output
+#EOF
+#
+#kubectl -n logging apply -f - <<"EOF"
+#apiVersion: logging.banzaicloud.io/v1beta1
+#kind: Logging
+#metadata:
+#  name: default-logging-simple
+#spec:
+#  fluentd:
+#    logLevel: debug
+#  fluentbit: {}
+#  controlNamespace: logging
+#EOF
+#
+#helm upgrade --install --wait --create-namespace --namespace logging log-generator kube-logging/log-generator
+#
+#
+#
+#kubectl get secret -n logging default-logging-simple-fluentd-app -o jsonpath='{.data.fluentd\.conf}' | base64 -d
+#
+#Add Grafana Loki Datasource and Explore log
+#
