@@ -98,11 +98,10 @@ echo "==== 3) Prepare Gitlab Runner  ===="
 #
 #echo "==== 4) Import Repository and Install runner  ===="
 #
-#helm upgrade -i gitlab-runner gitlab/gitlab-runner -f gitlab-runner-values.yaml -n gitlab
-
-echo "==== Create user argo / abcd!234  ===="
-echo "==== Admin > Setting >  General > Import and Export > Repository by URL  ===="
-echo "==== Import https://github.com/flytux/kw-mvn, kw-mvn-deploy  ===="
+#
+#echo "==== Create user argo / abcd!234  ===="
+#echo "==== Admin > Setting >  General > Import and Export > Repository by URL  ===="
+#echo "==== Import https://github.com/flytux/kw-mvn, kw-mvn-deploy  ===="
 
 
 echo "==== 5) Install ArgoCD  ===="
@@ -140,6 +139,8 @@ spec:
           scheme: h2c
   tls: {}
 EOF
+
+sleep 10
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 

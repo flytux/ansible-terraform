@@ -20,6 +20,6 @@ helm upgrade -i cilium cilium/cilium --version 1.15.8 -f $HOME/kubeadm/cilium/va
 helm repo add traefik https://helm.traefik.io/traefik --force-update
 helm upgrade -i traefik traefik/traefik --version 27.0.2 -n kube-system --set ingressRoute.dashboard.enabled=true
 
-sleep 15
+sleep 30
 
 kubectl apply -f $HOME/kubeadm/cilium/announce-ip-pool.yaml
