@@ -8,7 +8,7 @@ curl -sfL https://get.rke2.io |  INSTALL_RKE2_VERSION=${rke2_version}+rke2r1 sh 
 systemctl enable rke2-server.service --now
 
 # Install kubectl, helm, k9s
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" --output /usr/local/bin/kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && chmod +x kubectl &&  mv kubectl /usr/local/bin
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 curl -s -L https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz | tar xvzf - -C /usr/local/bin
 

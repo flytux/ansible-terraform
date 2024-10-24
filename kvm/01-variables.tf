@@ -18,8 +18,9 @@ variable "cloud_image" { default = "Rocky-8-GenericCloud-Base.latest.x86_64.qcow
 variable "nodes" { 
          type = map(object({ role = string, octetIP = string , vcpu = number, memoryMB = number, incGB = number})) 
          default = {
-          node-01 = { role = "m1",  octetIP = "11" , vcpu = 12, memoryMB = 1024 * 28, incGB = 300},
-          #node-02 = { role = "m2",  octetIP = "12" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
-          #node-03 = { role = "w1",  octetIP = "13" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
+          node-01 = { role = "m1",  octetIP = "11" , vcpu = 4, memoryMB = 1024 * 10,  incGB = 100},
+          node-02 = { role = "w1",  octetIP = "12" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
+    #node-03 = { role = "w2",  octetIP = "13" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
+    #node-04 = { role = "w2",  octetIP = "14" , vcpu = 4, memoryMB = 1024 * 10, incGB = 100},
   }
 }
