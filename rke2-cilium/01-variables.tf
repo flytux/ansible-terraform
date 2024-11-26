@@ -10,8 +10,8 @@ variable "rke2_nodes" {
 
   type = map(object({ role = string, ip = string }))
   default = { 
-              rke2-master1 = { role = "master", ip = "192.168.122.11"},
+              rke2-master1 = { role = "master"       , ip = "192.168.122.11"},
               #rke2-master2 = { role = "master-member", ip = "192.168.122.12"},
-              #rke2-master3 = { role = "worker", ip = "192.168.122.13"}
+              #rke2-master3 = { role = "worker"      , ip = "192.168.122.13"}
   }
 }

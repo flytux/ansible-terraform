@@ -1,5 +1,5 @@
 token: ${token}
 tls-san:
   - ${tls_san}
-#cni: none
+cni: none
 #disable: rke2-ingress-nginx

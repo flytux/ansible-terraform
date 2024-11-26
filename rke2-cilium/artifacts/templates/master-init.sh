@@ -18,8 +18,6 @@ mkdir -p $HOME/.kube && cp /etc/rancher/rke2/rke2.yaml $HOME/.kube/config
 # Install Cilium
 
 helm repo add cilium https://helm.cilium.io/
-helm upgrade -i cilium cilium/cilium --version 1.16.1 -f $HOME/rke2/cilium/values.yaml -n kube-system
+helm upgrade --wait -i cilium cilium/cilium --version 1.16.1 -f $HOME/rke2/cilium/values.yaml -n kube-system
 
-sleep 30
-
-kubectl apply -f $HOME/rke2/cilium/announce-ip-pool.yaml
+#kubectl apply -f $HOME/rke2/cilium/announce-ip-pool.yaml
